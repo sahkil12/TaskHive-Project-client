@@ -5,7 +5,7 @@ import Footer from "../Components/Footer";
 const MainLayout = () => {
     return (
         <div>
-           <header className="sticky top-1 z-50 ">
+           <header className="sticky top-0 z-50 ">
              <Navbar></Navbar>
            </header>
             <main className="min-h-[calc(100vh-403px)]">
