@@ -1,10 +1,12 @@
-import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { createUserWithEmailAndPassword, GithubAuthProvider, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import { AuthContext } from "./AuthContext";
 import { auth } from "./Firebase.init";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const AuthProvider = ({children}) => {
-
+    const [users, setUsers] = useState(null)
+    const googleProvider = new GoogleAuthProvider()
+    const githubProvider = new GithubAuthProvider()
     const signUpUser =(email, password)=>{
        return createUserWithEmailAndPassword(auth, email, password)
     }
@@ -14,10 +16,17 @@ const AuthProvider = ({children}) => {
     const logOutUser = ()=>{
         return signOut(auth)
     }
+    const googleCreate =()=>{
+       return signInWithPopup(auth, googleProvider)
+    }
+    const githubCreate =()=>{
+       return signInWithPopup(auth, githubProvider)
+    }
     
     useEffect(()=>{
         const unSubscribe = onAuthStateChanged(auth, (currentUser)=>{
             console.log(currentUser)
+            setUsers(currentUser)
         })
         return ()=>{
             unSubscribe()
@@ -26,6 +35,11 @@ const AuthProvider = ({children}) => {
 
     const userInfo = {
         signUpUser,
+        googleCreate,
+        githubCreate,
+        loginUser,
+        logOutUser,
+        users,
     }
    
    return (

@@ -1,14 +1,17 @@
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
 import { FaArrowLeftLong } from "react-icons/fa6";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import useAuth from "./../Auth/useAuth";
 import { useState } from "react";
+import Swal from "sweetalert2";
+import toast from "react-hot-toast";
 
 const SignUp = () => {
-  const { signUpUser } = useAuth();
+  const { signUpUser, googleCreate, githubCreate } = useAuth();
   const [error, setError] = useState("");
   const [nameError, setNameError] = useState("");
+  const navigate = useNavigate();
   const handleFormSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -19,6 +22,7 @@ const SignUp = () => {
     const term = form.term.checked;
     const info = { name, email, photo, password };
     console.log(info, term);
+    setError("");
     // name validation validation--
     if (name.length < 5) {
       setNameError("Name must be at least 5 characters long.");
@@ -41,19 +45,65 @@ const SignUp = () => {
       setError("Password must contain at least one lowercase letter.");
       return;
     }
-
-    setError("");
-
     // signup user
     signUpUser(email, password)
       .then((result) => {
         console.log(result);
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "Your Account Create Successfully At TaskHive",
+          showConfirmButton: false,
+          timer: 1200,
+        });
+        navigate("/")
       })
       .catch((error) => {
         console.log(error);
         setError(error.message);
+        toast.error("Something is wrong please check error.")
       });
   };
+//   google signup
+  const googleSignUp = ()=>{
+    googleCreate()
+    .then(result =>{
+        console.log(result);
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "Your Account Create Successfully At TaskHive",
+          showConfirmButton: false,
+          timer: 1200,
+        });
+        navigate("/")
+    })
+    .catch(error =>{
+        console.log(error);
+        setError(error.message)
+        toast.error("Something is wrong please check error.")
+    })
+  }
+// github signUp
+ const githubSignUp = ()=>{
+   githubCreate()
+    .then(result =>{
+        console.log(result);
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "Your Account Create Successfully At TaskHive",
+          showConfirmButton: false,
+          timer: 1200,
+        });
+        navigate("/")
+    })
+    .catch(error =>{
+        console.log(error);
+        setError(error.message)
+        toast.error("Something is wrong please check error.")
+    })
+  }
   return (
     <div className="px-2 bg-primary/5 ">
       <nav className="flex flex-col items-center py-8 px-4 gap-3 md:flex-row justify-between">
@@ -96,9 +146,9 @@ const SignUp = () => {
         {/* social button */}
         <div className="flex items-center justify-center my-7 gap-5 flex-col md:flex-row">
           <button
-            aria-label="Login with Google"
+           onClick={googleSignUp}
             type="button"
-            className="flex items-center justify-center w-full p-3 space-x-4 rounded-md focus:ring-2 focus:ring-offset-1 bg-primary/10 font-bold focus:outline-none focus:border-none"
+            className="flex items-center justify-center w-full p-3 space-x-4 rounded-md focus:ring-2 focus:ring-offset-1 bg-primary/10 font-bold focus:outline-none focus:border-none hover:bg-primary/15"
           >
             <span className=" p-2 bg-white rounded-full">
               <FcGoogle size={25}></FcGoogle>
@@ -107,9 +157,9 @@ const SignUp = () => {
           </button>
 
           <button
-            aria-label="Login with Google"
+            onClick={githubSignUp}
             type="button"
-            className="flex items-center justify-center w-full p-3 space-x-4  rounded-md focus:ring-2 focus:ring-offset-1 bg-primary/10 font-bold focus:outline-none focus:border-none "
+            className="flex items-center justify-center w-full p-3 space-x-4  rounded-md focus:ring-2 focus:ring-offset-1 bg-primary/10 font-bold focus:outline-none focus:border-none hover:bg-primary/15"
           >
             <span className=" p-2 bg-white rounded-full">
               <FaGithub size={25}></FaGithub>
@@ -159,7 +209,7 @@ const SignUp = () => {
             <div className="space-y-2">
               <label className="text-md justify-between font-medium flex items-center">
                 Password
-                <a href="#" className="hover:underline text-sm">
+                <a className="hover:underline text-sm">
                   Forgat Password?
                 </a>
               </label>
