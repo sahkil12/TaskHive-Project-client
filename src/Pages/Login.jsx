@@ -15,7 +15,7 @@ const Login = () => {
             <img src="/taskhiva logo .png" className="w-10 h-10" alt="logo" />
             <Link
               to={"/"}
-              className="text-3xl font-bold bg-gradient-to-r from-indigo-600 to-sky-600 bg-clip-text text-transparent"
+              className="text-3xl font-bold bg-gradient-to-r from-indigo-600 to-sky-600 bg-clip-text text-transparent logo"
             >
               TaskHive
             </Link>

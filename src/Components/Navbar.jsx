@@ -9,7 +9,7 @@ const Navbar = () => {
           className={({ isActive }) =>
             isActive
               ? "bg-primary/10 text-primary font-semibold rounded-lg px-3 py-2"
-              : "font-medium text-slate-700 hover:text-primary hover:scale-105 transition"
+              : "font-medium text-slate-600 hover:text-primary hover:scale-105 transition"
           }
         >
           Home
@@ -21,7 +21,7 @@ const Navbar = () => {
           className={({ isActive }) =>
             isActive
               ? "bg-primary/10 text-primary font-semibold rounded-lg px-3 py-2"
-              : "font-medium text-slate-700 hover:text-primary hover:scale-105 transition"
+              : "font-medium text-slate-600 hover:text-primary hover:scale-105 transition"
           }
         >
           Add Task
@@ -33,7 +33,7 @@ const Navbar = () => {
           className={({ isActive }) =>
             isActive
               ? "bg-primary/10 text-primary font-semibold rounded-lg px-3 py-2"
-              : "font-medium text-slate-700 hover:text-primary hover:scale-105 transition"
+              : "font-medium text-slate-600 hover:text-primary hover:scale-105 transition"
           }
         >
           Browse Tasks
@@ -45,7 +45,7 @@ const Navbar = () => {
           className={({ isActive }) =>
             isActive
               ? "bg-primary/10 text-primary font-semibold rounded-lg px-3 py-2"
-              : "font-medium text-slate-700 hover:text-primary hover:scale-105 transition"
+              : "font-medium text-slate-600 hover:text-primary hover:scale-105 transition"
           }
         >
           My Posted Task
@@ -56,7 +56,7 @@ const Navbar = () => {
 
   return (
     <div className="shadow-md">
-      <div className="navbar sm:px-6 bg-white py-7 rounded-b-2xl">
+      <div className="navbar sm:px-6 bg-base-300 py-7 rounded-b-2xl">
         {/* Left */}
         <div className="navbar-start">
           <div className="dropdown">
@@ -89,7 +89,7 @@ const Navbar = () => {
             <img src="/taskhiva logo .png" className="w-10 h-10" alt="logo" />
             <Link
               to={"/"}
-              className="text-3xl font-bold bg-gradient-to-r from-indigo-600 to-sky-600 bg-clip-text text-transparent"
+              className="text-3xl font-bold bg-gradient-to-r from-indigo-600 to-sky-600 bg-clip-text text-transparent logo"
             >
               TaskHive
             </Link>
@@ -119,7 +119,7 @@ const Navbar = () => {
 
   {/* moon icon */}
   <svg
-    className="swap-on h-10 w-10 fill-current text-black/70"
+    className="swap-on h-10 w-10 fill-current text-white/70"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24">
     <path
