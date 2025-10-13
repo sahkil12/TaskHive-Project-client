@@ -27,7 +27,7 @@ const Login = () => {
       </div>
       <div className="w-full mx-auto max-w-6xl my-3 border-2 border-neutral-200 p-4 rounded-md shadow sm:p-8 rail">
         <h2 className="mb-4 text-4xl font-bold text-center">
-         Login to TaskHive
+         Login to TaskHive.
         </h2>
         <p className="text-md text-center font-medium text-gray-600">
           Enter your details below To Login
@@ -66,17 +66,7 @@ const Login = () => {
         {/* sign up form */}
         <form onSubmit={handleFormSubmit} className="space-y-8">
           <div className="space-y-4">
-            <div className="space-y-2">
-              <label className="block text-md font-medium">
-                Name
-              </label>
-              <input
-                type="text"
-                name="name"
-                placeholder="Enter Your Name"
-                className="w-full px-3 py-4 text-lg font-medium border rounded-md border-primary/30 focus:outline-primary/40"
-              />
-            </div>
+          {/* email */}
             <div className="space-y-2">
               <label  className="block text-md font-medium">
                 Email address
@@ -88,21 +78,10 @@ const Login = () => {
                 className="w-full px-3 py-4 text-lg font-medium border rounded-md border-primary/30 focus:outline-primary/40"
               />
             </div>
+           {/* password */}
             <div className="space-y-2">
-              <label className="block text-md font-medium">
-                Photo URl
-              </label>
-              <input
-                type="text"
-                name="photo"
-                placeholder="Enter Photo URL"
-                className="w-full px-3 py-4 text-lg font-medium border rounded-md border-primary/30 focus:outline-primary/40"
-              />
-            </div>
-            <div className="space-y-2">
-              <label className="text-md justify-between font-medium flex items-center">
+              <label className="text-md  font-medium flex items-center">
                 Password
-                <a href="#" className="hover:underline text-sm">Forgat Password?</a>
               </label>
               <input
                 type="password"
@@ -111,15 +90,11 @@ const Login = () => {
                 className="w-full px-3 py-4 text-lg font-medium border rounded-md border-primary/30 focus:outline-primary/40"
               />
             </div>
-           <div className="flex items-center gap-2 text-base font-medium">
-           <input type="checkbox" className="checkbox checkbox-md" />
-             <p>Term And Condition</p>
-           </div>
           </div>
           <button
             className="w-full bg-primary/90 text-white px-7 py-3 rounded-full text-lg font-bold"
           >
-            Sign in
+            LogIn
           </button>
         </form>
       </div>

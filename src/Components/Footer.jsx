@@ -41,9 +41,9 @@ const Footer = () => {
         <nav className="flex flex-col gap-2">
           <h6 className="font-semibold text-slate-800 mb-2">Pages</h6>
           <Link to="/" className="hover:text-primary transition">Home</Link>
-          <Link to="/contact" className="hover:text-primary transition">Contact</Link>
-          <Link to="/jobs" className="hover:text-primary transition">Jobs</Link>
-          <Link to="/press" className="hover:text-primary transition">Press kit</Link>
+          <Link to="/addTask" className="hover:text-primary transition">Add Task</Link>
+          <Link to="/browseTasks" className="hover:text-primary transition">Browse Jobs</Link>
+          <Link to="/myPostTasks" className="hover:text-primary transition">My Posted Task</Link>
         </nav>
 
         {/* Legal */}

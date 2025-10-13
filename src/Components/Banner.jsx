@@ -44,7 +44,7 @@ const Banner = () => {
                     />
                   </span>
                 </motion.h2>
-                <motion.p className="text-lg text-gray-900">
+                <motion.p className="text-lg">
                   Hire skilled professionals to get your projects done efficiently and on time.
                 </motion.p>
                 <motion.div
@@ -104,7 +104,7 @@ const Banner = () => {
                     />
                   </span>
                 </h2>
-                <p className="text-lg text-gray-900">
+                <p className="text-lg ">
                   Discover exciting projects and bid to get hired by clients worldwide.
                 </p>
                 <motion.div
@@ -164,7 +164,7 @@ const Banner = () => {
                     />
                   </span>
                 </h2>
-                <p className="text-lg text-gray-900">
+                <p className="text-lg ">
                   Submit bids, communicate with clients, and grow your freelance career.
                 </p>
                 <motion.div

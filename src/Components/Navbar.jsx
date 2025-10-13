@@ -1,14 +1,14 @@
 import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
-  const links = (
+ const links = (
     <>
       <li>
         <NavLink
           to={"/"}
           className={({ isActive }) =>
             isActive
-              ? "bg-primary/10 text-primary font-semibold rounded-lg px-3 py-1"
+              ? "bg-primary/10 text-primary font-semibold rounded-lg px-3 py-2"
               : "font-medium text-slate-700 hover:text-primary hover:scale-105 transition"
           }
         >
@@ -20,7 +20,7 @@ const Navbar = () => {
           to={"/addTask"}
           className={({ isActive }) =>
             isActive
-              ? "bg-primary/10 text-primary font-semibold rounded-lg px-3 py-1"
+              ? "bg-primary/10 text-primary font-semibold rounded-lg px-3 py-2"
               : "font-medium text-slate-700 hover:text-primary hover:scale-105 transition"
           }
         >
@@ -32,7 +32,7 @@ const Navbar = () => {
           to={"/browseTasks"}
           className={({ isActive }) =>
             isActive
-              ? "bg-primary/10 text-primary font-semibold rounded-lg px-3 py-1"
+              ? "bg-primary/10 text-primary font-semibold rounded-lg px-3 py-2"
               : "font-medium text-slate-700 hover:text-primary hover:scale-105 transition"
           }
         >
@@ -44,7 +44,7 @@ const Navbar = () => {
           to={"/myPostTasks"}
           className={({ isActive }) =>
             isActive
-              ? "bg-primary/10 text-primary font-semibold rounded-lg px-3 py-1"
+              ? "bg-primary/10 text-primary font-semibold rounded-lg px-3 py-2"
               : "font-medium text-slate-700 hover:text-primary hover:scale-105 transition"
           }
         >
@@ -106,11 +106,11 @@ const Navbar = () => {
         {/* theme */}
           <label className="swap swap-rotate">
   {/* this hidden checkbox controls the state */}
-  <input type="checkbox" className="theme-controller" value="synthwave" />
+  <input type="checkbox" className="theme-controller" value="dark" />
 
   {/* sun icon */}
   <svg
-    className="swap-off h-10 w-10 fill-current"
+    className="swap-off h-10 w-10 fill-current text-black/80"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24">
     <path
@@ -119,7 +119,7 @@ const Navbar = () => {
 
   {/* moon icon */}
   <svg
-    className="swap-on h-10 w-10 fill-current"
+    className="swap-on h-10 w-10 fill-current text-black/70"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24">
     <path
@@ -127,7 +127,7 @@ const Navbar = () => {
   </svg>
 </label>
           {/* btn */}
-          <button className="btn btn-primary btn-md px-5">Login</button>
+          <Link to={'/auth/login'} className="btn font-bold btn-primary btn-md px-7 text-base">Login</Link>
 
           {/* Profile */}
           <div className="dropdown hidden dropdown-end">
