@@ -56,7 +56,7 @@ const Navbar = () => {
   );
 
   //
-  const { users, logOutUser } = useAuth();
+  const { user, logOutUser } = useAuth();
 
   const handleLogout =()=>{
     logOutUser()
@@ -136,7 +136,7 @@ const Navbar = () => {
           </label>
 
           <div>
-            {users ? (
+            {user ? (
               <div className="dropdown  dropdown-end">
                 <div
                   tabIndex={0}
@@ -147,7 +147,7 @@ const Navbar = () => {
                     <img
                     className="rounded-full w-10 h-10"
                       alt="User"
-                      src={users?.photoURL || '/user.png' }
+                      src={user?.photoURL || '/user.png' }
                     />
                   </div>
                 </div>
@@ -156,8 +156,8 @@ const Navbar = () => {
                   className="menu menu-md dropdown-content bg-white border border-slate-200 rounded-box z-10 mt-3 flex flex-col gap-3 justify-center items-center w-80 md:w-96 shadow-lg py-10 p-5"
                 >
                   <li className="w-full items-center">
-                    <span className="pop text-lg font-semibold text-secondary">{users.displayName}</span>
-                    <span className="text-base font-semibold">{users?.email}</span>
+                    <span className="pop text-lg font-semibold text-secondary">{user.displayName}</span>
+                    <span className="text-base font-semibold">{user?.email}</span>
                   </li>
                   <div className="border border-primary/60 w-full"></div>
                   <li className="w-full items-center">

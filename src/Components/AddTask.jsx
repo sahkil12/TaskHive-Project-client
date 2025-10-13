@@ -1,15 +1,48 @@
+import toast from "react-hot-toast";
 import { MdOutlinePlaylistAddCircle } from "react-icons/md";
+import useAuth from "../Auth/useAuth";
 
 const AddTask = () => {
-    const handleTaskForm =(e)=>{
-        e.preventDefault()
+      const { user } = useAuth();
+      
+  const handleTaskForm = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    // form theke value nichi
+    const title = form.title.value;
+    const name = form.name.value;
+    const email = form.email.value;
+    const category = form.category.value;
+    const deadline = form.deadline.value;
+    const budget = form.budget.value;
+    const country = form.country.value;
+    const details = form.details.value;
+     // validation check
+    if (!title || !name || !email || !category || !deadline || !budget || !country || !details) {
+      toast.error("All fields are required. Please fill out everything.", {
+        duration:1500,
+      });
+      return;
     }
+    const formData = {
+      title,
+      name,
+      email,
+      category,
+      deadline,
+      budget,
+      country,
+      details,
+    };
+    console.log("Form Data:", formData);
+  };
   return (
     <div className="">
       <div className="p-2 my-20 border rounded-lg bg-gray-100 border-gray-200 shadow-xl md:p-8 md:w-10/12 mx-auto ">
         <h2 className="mb-10 mt-6 rail text-center font-bold text-black text-3xl flex justify-center items-center gap-3">
-            <MdOutlinePlaylistAddCircle size={45} className="text-secondary"/>
-          <span className="text-secondary font-extrabold">Add</span> Your Task Here{" "}
+          <MdOutlinePlaylistAddCircle size={45} className="text-secondary" />
+          <span className="text-secondary font-extrabold">Add</span> Your Task
+          Here{" "}
         </h2>
         <section>
           {/* form  */}
@@ -43,6 +76,7 @@ const AddTask = () => {
                 <input
                   type="email"
                   name="email"
+                  value={user?.email || ''}
                   className="input bg-white w-full border-2 py-6 border-primary/10 focus:outline-none focus:border-primary text-black"
                   placeholder="Type Your Email"
                 />
@@ -54,6 +88,7 @@ const AddTask = () => {
                 </label>
                 <select
                   defaultValue="Choice Your Category"
+                  name="category"
                   className="select bg-white w-full border-2 text-base select-lg border-primary/10 focus:outline-none focus:border-primary text-gray-800"
                 >
                   <option disabled={true} className="text-gray-500">
@@ -97,7 +132,7 @@ const AddTask = () => {
                   Country
                 </label>
                 <input
-                  type='text'
+                  type="text"
                   name="country"
                   className="input bg-white w-full border-2 py-6 border-primary/10 focus:outline-none focus:border-primary text-black"
                   placeholder="Type Your Country"
@@ -109,7 +144,11 @@ const AddTask = () => {
               <label className="label text-base font-medium text-black">
                 Details
               </label>
-             <textarea className="textarea bg-white w-full border-2 text-lg border-primary/10 focus:outline-none focus:border-primary text-black" placeholder="Type Your Details"></textarea>
+              <textarea
+                name="details"
+                className="textarea bg-white w-full border-2 text-lg border-primary/10 focus:outline-none focus:border-primary text-black"
+                placeholder="Type Your Details"
+              ></textarea>
             </fieldset>
             {/* button */}
             <button className="mt-6 rounded-full  w-full py-3 bg-primary/90 text-xl font-medium text-white">

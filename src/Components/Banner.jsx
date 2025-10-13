@@ -4,7 +4,7 @@ import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
 import { Link } from "react-router-dom";
 import { Typewriter } from "react-simple-typewriter";
-import { motion } from "framer-motion"; // <-- correct import
+import { motion } from "framer-motion";
 
 const Banner = () => {
   const slideVariants = {

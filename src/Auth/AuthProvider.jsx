@@ -4,29 +4,36 @@ import { auth } from "./Firebase.init";
 import { useEffect, useState } from "react";
 
 const AuthProvider = ({children}) => {
-    const [users, setUsers] = useState(null)
+    const [user, setUser] = useState(null)
+    const [loading, setLoading] = useState(true)
+    // providers    
     const googleProvider = new GoogleAuthProvider()
     const githubProvider = new GithubAuthProvider()
     const signUpUser =(email, password)=>{
+        setLoading(true)
        return createUserWithEmailAndPassword(auth, email, password)
     }
     const loginUser = (email, password)=>{
+        setLoading(true)    
         return signInWithEmailAndPassword(auth, email, password)
     }
     const logOutUser = ()=>{
         return signOut(auth)
     }
     const googleCreate =()=>{
+        setLoading(true)
        return signInWithPopup(auth, googleProvider)
     }
     const githubCreate =()=>{
+        setLoading(true)    
        return signInWithPopup(auth, githubProvider)
     }
     
     useEffect(()=>{
         const unSubscribe = onAuthStateChanged(auth, (currentUser)=>{
             console.log(currentUser)
-            setUsers(currentUser)
+            setUser(currentUser)
+            setLoading(false)   
         })
         return ()=>{
             unSubscribe()
@@ -39,7 +46,8 @@ const AuthProvider = ({children}) => {
         githubCreate,
         loginUser,
         logOutUser,
-        users,
+        user,
+        loading,
     }
    
    return (

@@ -7,11 +7,14 @@ import MyPostTasks from "../Components/MyPostTasks";
 import Login from "../Pages/Login";
 import SignUp from "../Pages/SignUp";
 import Auth from "../Auth/Auth";
+import PrivateRoute from "../Private/PrivateRoute";
+import ErrorPage from "../Components/ErrorPage";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout></MainLayout>,
+    errorElement:<ErrorPage></ErrorPage>,
     children:[
         {
             index: true,
@@ -19,7 +22,7 @@ export const router = createBrowserRouter([
         },
         {
             path:'addTask',
-            element:<AddTask></AddTask>
+            element:<PrivateRoute><AddTask></AddTask></PrivateRoute>,
         },
         {
             path:'browseTasks',
