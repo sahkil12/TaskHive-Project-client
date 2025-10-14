@@ -5,7 +5,6 @@ import { useState } from "react";
 const TaskDetails = () => {
   const task = useLoaderData();
   const { title, name, email, category, deadline, budget, country, details } = task;
-    console.log(task);
   const [bidsCount, setBidsCount] = useState(0);
 
   const handleBid = () => {
@@ -58,13 +57,11 @@ const TaskDetails = () => {
           </h3>
           <p className="text-gray-700 leading-relaxed md:w-10/12 md:px-3">{details}</p>
         </div>
-
         {/* Bid Button */}
         <div className="mt-8 text-center">
           <button
             onClick={handleBid}
-            className="bg-primary/90 hover:bg-primary text-white font-semibold py-3 px-6 rounded-lg transition duration-300"
-          >
+            className="bg-primary/90 hover:bg-primary text-white font-semibold py-3 px-6 rounded-lg transition duration-300">
             Place a Bid
           </button>
         </div>
