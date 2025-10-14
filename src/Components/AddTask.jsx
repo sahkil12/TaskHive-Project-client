@@ -34,7 +34,6 @@ const AddTask = () => {
       country,
       details,
     };
-    console.log("Form Data:", formData);
         // post data in database
     fetch("http://localhost:3000/tasks",{
       method:"POST",

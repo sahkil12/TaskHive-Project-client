@@ -1,47 +1,45 @@
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
 import { FaArrowLeftLong } from "react-icons/fa6";
-import { Link, useNavigate} from "react-router-dom";
+import { Link, useLocation, useNavigate} from "react-router-dom";
 import useAuth from "../Auth/useAuth";
+import toast from "react-hot-toast";
 
 const Login = () => {
      const { loginUser, googleCreate, githubCreate } = useAuth();
       const navigate = useNavigate();
+      const location = useLocation();
   const handleFormSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
-    const info = { email, password}
-    console.log(info);
     // login user
     loginUser(email, password)
     .then(result =>{
-        navigate('/')
-        console.log(result);
+        navigate(`${location.state? location.state : '/'}`)
+        toast.success("Login Successful");
     })
     .catch(error =>{
-        console.log(error);
+        // console.log(error);
     })
   };
   const handleGoogleLogin = ()=>{
     googleCreate()
     .then(result =>{
-        navigate('/')
-        console.log(result);
+         navigate(`${location.state? location.state : '/'}`)
     })
     .catch(error =>{
-        console.log(error);
+        // console.log(error);
     })
   }
   const handleGithubLogin = ()=>{
     githubCreate()
     .then(result =>{
-        navigate('/')
-        console.log(result);
+         navigate(`${location.state? location.state : '/'}`)
     })
     .catch(error =>{
-        console.log(error);
+        // console.log(error);
     })
   }
 

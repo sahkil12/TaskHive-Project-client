@@ -49,7 +49,7 @@ const SignUp = () => {
     // signup user
     signUpUser(email, password)
       .then((result) => {
-        console.log(result);
+        // console.log(result);
         // update user profile
         updateUserProfile({ displayName: name, photoURL: photo })
         .then(()=>{
@@ -64,7 +64,7 @@ const SignUp = () => {
         }) 
       })
       .catch((error) => {
-        console.log(error);
+        // console.log(error);
         setError(error.message);
         toast.error("Something is wrong please check error.")
       });
@@ -73,7 +73,7 @@ const SignUp = () => {
   const googleSignUp = ()=>{
     googleCreate()
     .then(result =>{
-        console.log(result);
+        // console.log(result);
         Swal.fire({
           position: "center",
           icon: "success",
@@ -84,7 +84,7 @@ const SignUp = () => {
         navigate("/")
     })
     .catch(error =>{
-        console.log(error);
+        // console.log(error);
         setError(error.message)
         toast.error("Something is wrong please check error.")
     })
@@ -93,7 +93,7 @@ const SignUp = () => {
  const githubSignUp = ()=>{
    githubCreate()
     .then(result =>{
-        console.log(result);
+        // console.log(result);
         Swal.fire({
           position: "center",
           icon: "success",
@@ -104,7 +104,7 @@ const SignUp = () => {
         navigate("/")
     })
     .catch(error =>{
-        console.log(error);
+        // console.log(error);
         setError(error.message)
         toast.error("Something is wrong please check error.")
     })

@@ -56,7 +56,8 @@ const MyPostTasks = () => {
       </h2>
       {/* table */}
       <div>
-        <div className="overflow-x-auto my-10 p-2 border-2 rounded-lg border-neutral-300 shadow-md ">
+        {
+            myTasks.length>0 ? <div className="overflow-x-auto my-10 p-2 border-2 rounded-lg border-neutral-300 shadow-md ">
           <table className="table ">
             <thead>
               <tr className="text-gray-600">
@@ -102,7 +103,8 @@ const MyPostTasks = () => {
               ))}
             </tbody>
           </table>
-        </div>
+        </div> : <h2 className="text-3xl text-center my-20 font-semibold text-gray-600">No Task Posted Yet!</h2>
+        }
       </div>
     </div>
   );
