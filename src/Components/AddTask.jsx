@@ -35,6 +35,22 @@ const AddTask = () => {
       details,
     };
     console.log("Form Data:", formData);
+        // post data in database
+    fetch("http://localhost:3000/addTasks",{
+      method:"POST",
+      headers:{
+        "content-type":"application/json"
+      },
+      body:JSON.stringify(formData) 
+    })
+    .then(res => res.json())
+    .then(data => {
+      console.log(data);
+      if(data.insertedId){
+        toast.success("Your Task Added Successfully",{ duration:1200});
+        form.reset();
+      }
+  })
   };
   return (
     <div className="">

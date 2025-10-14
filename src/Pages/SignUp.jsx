@@ -8,7 +8,7 @@ import Swal from "sweetalert2";
 import toast from "react-hot-toast";
 
 const SignUp = () => {
-  const { signUpUser, googleCreate, githubCreate } = useAuth();
+  const { signUpUser, googleCreate, githubCreate, updateUserProfile } = useAuth();
   const [error, setError] = useState("");
   const [nameError, setNameError] = useState("");
   const navigate = useNavigate();
@@ -22,6 +22,7 @@ const SignUp = () => {
     const term = form.term.checked;
     const info = { name, email, photo, password };
     console.log(info, term);
+
     setError("");
     // name validation validation--
     if (name.length < 5) {
@@ -49,7 +50,10 @@ const SignUp = () => {
     signUpUser(email, password)
       .then((result) => {
         console.log(result);
-        Swal.fire({
+        // update user profile
+        updateUserProfile({ displayName: name, photoURL: photo })
+        .then(()=>{
+           Swal.fire({
           position: "center",
           icon: "success",
           title: "Your Account Create Successfully At TaskHive",
@@ -57,6 +61,7 @@ const SignUp = () => {
           timer: 1200,
         });
         navigate("/")
+        }) 
       })
       .catch((error) => {
         console.log(error);
@@ -210,7 +215,7 @@ const SignUp = () => {
               <label className="text-md justify-between font-medium flex items-center">
                 Password
                 <a className="hover:underline text-sm">
-                  Forgat Password?
+                  Forgot Password?
                 </a>
               </label>
               <input
