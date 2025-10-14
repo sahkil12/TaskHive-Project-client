@@ -36,7 +36,7 @@ const AddTask = () => {
     };
     console.log("Form Data:", formData);
         // post data in database
-    fetch("http://localhost:3000/addTasks",{
+    fetch("http://localhost:3000/tasks",{
       method:"POST",
       headers:{
         "content-type":"application/json"

@@ -1,4 +1,4 @@
-import { NavLink, useLoaderData } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 import TaskCard from "./TaskCard";
 import { useEffect, useState } from "react";
 
@@ -30,16 +30,16 @@ const BrowseTasks = () => {
       </div>
       <div className="w-full p-2 md:w-11/12 mx-auto grid grid-cols-1 sm:grid-cols-8 gap-3 py-10">
         {/* all category container section */}
-        <section className=" sm:col-span-2 py-5 p-1 md:px-3 w-full">
-          <h2 className="text-white bg-primary/90 py-3 rounded-lg text-center text-xl ">
+        <section className="sm:sticky h-fit top-28 sm:col-span-2 py-5 p-1 md:px-3 w-full">
+          <h2 className="text-white font-semibold bg-primary/90 py-3 rounded-lg text-center text-xl ">
             Task Category
           </h2>
-          <ul className="space-y-2 py-1">
+          <ul className="space-y-2 py-2">
             {categories.map((cat) => (
               <li
                 onClick={() => setActiveCategory(cat.name)}
                 key={cat.id}
-                className={`px-4 py-2 border text-center font-semibold hover:bg-primary/5 border-neutral-300 cursor-pointer ${
+                className={`px-4 py-2 rounded-sm border text-lg text-center font-semibold hover:bg-primary/5 border-neutral-300 cursor-pointer ${
                   activeCategory === cat.name ? "bg-primary/15" : ""
                 }`}
               >
@@ -56,7 +56,7 @@ const BrowseTasks = () => {
                 <TaskCard key={task._id} task={task} />
               ))
             ) : (
-              <p className="text-center text-gray-700 my-8 text-2xl font-semibold col-span-full">
+              <p className="text-center text-gray-600 my-8 text-2xl font-semibold col-span-full">
                 No tasks available in this category.
               </p>
             )}

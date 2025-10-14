@@ -10,6 +10,7 @@ import Auth from "../Auth/Auth";
 import PrivateRoute from "../Private/PrivateRoute";
 import ErrorPage from "../Components/ErrorPage";
 import Spinner from "../Components/Spinner";
+import TaskDetails from "../Components/TaskDetails";
 
 export const router = createBrowserRouter([
   {
@@ -27,14 +28,19 @@ export const router = createBrowserRouter([
         },
         {
             path:'browseTasks',
-            loader:()=>fetch('http://localhost:3000/addTasks'),
+            loader:()=>fetch('http://localhost:3000/tasks'),
             element:<BrowseTasks></BrowseTasks>,
             hydrateFallbackElement:<Spinner></Spinner>
-            
         },
-        {
+        {   
             path:'myPostTasks',
             element:<PrivateRoute><MyPostTasks></MyPostTasks></PrivateRoute>
+        },
+        {
+            path:'taskDetails/:id',
+            loader:({params})=>fetch(`http://localhost:3000/task/${params.id}`),
+            element:<PrivateRoute><TaskDetails></TaskDetails></PrivateRoute>,
+            hydrateFallbackElement:<Spinner></Spinner>
         },
     ]
   },
