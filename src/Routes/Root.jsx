@@ -9,6 +9,7 @@ import SignUp from "../Pages/SignUp";
 import Auth from "../Auth/Auth";
 import PrivateRoute from "../Private/PrivateRoute";
 import ErrorPage from "../Components/ErrorPage";
+import Spinner from "../Components/Spinner";
 
 export const router = createBrowserRouter([
   {
@@ -26,7 +27,10 @@ export const router = createBrowserRouter([
         },
         {
             path:'browseTasks',
-            element:<BrowseTasks></BrowseTasks>
+            loader:()=>fetch('http://localhost:3000/addTasks'),
+            element:<BrowseTasks></BrowseTasks>,
+            hydrateFallbackElement:<Spinner></Spinner>
+            
         },
         {
             path:'myPostTasks',

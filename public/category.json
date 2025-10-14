@@ -1,0 +1,34 @@
+[
+  {
+    "id": 0,
+    "name": "All Categories"
+  },
+  {
+    "id": 1,
+    "name": "Web Development"
+  },
+  {
+    "id": 2,
+    "name": "Design"
+  },
+  {
+    "id": 3,
+    "name": "Digital Marketing"
+  },
+  {
+    "id": 4,
+    "name": "UI/UX Design"
+  },
+  {
+    "id": 5,
+    "name": "Video Editing"
+  },
+  {
+    "id": 6,
+    "name": "Data Entry"
+  },
+  {
+    "id": 7,
+    "name": "Content Writing"
+  }
+]
