@@ -70,7 +70,7 @@ const AddTask = () => {
               <input
                 type="text"
                 name="title"
-                className="input bg-white w-full border-2 py-6 border-primary/10 focus:outline-none focus:border-primary text-black"
+                className="input text-base bg-white w-full border-2 py-6 border-primary/10 focus:outline-none focus:border-primary text-black"
                 placeholder="Type Your Task Title"
               />
             </fieldset>
@@ -82,7 +82,7 @@ const AddTask = () => {
                 <input
                   type="text"
                   name="name"
-                  className="input bg-white w-full border-2 py-6 border-primary/10 focus:outline-none focus:border-primary text-black"
+                  className="input text-base bg-white w-full border-2 py-6 border-primary/10 focus:outline-none focus:border-primary text-black"
                   placeholder="Type Your Name"
                 />
               </fieldset>
@@ -92,8 +92,8 @@ const AddTask = () => {
                 <input
                   type="email"
                   name="email"
-                  value={user?.email || ''}
-                  className="input bg-white w-full border-2 py-6 border-primary/10 focus:outline-none focus:border-primary text-black"
+                  defaultValue={user?.email || ''}
+                  className="input text-base bg-white w-full border-2 py-6 border-primary/10 focus:outline-none focus:border-primary text-black"
                   placeholder="Type Your Email"
                 />
               </fieldset>
@@ -127,7 +127,7 @@ const AddTask = () => {
                 <input
                   type="date"
                   name="deadline"
-                  className="input bg-white w-full border-2 py-6 border-primary/10 focus:outline-none focus:border-primary text-black"
+                  className="input text-base bg-white w-full border-2 py-6 border-primary/10 focus:outline-none focus:border-primary text-black"
                   placeholder="Enter coffee taste"
                 />
               </fieldset>
@@ -139,7 +139,7 @@ const AddTask = () => {
                 <input
                   type="number"
                   name="budget"
-                  className="input bg-white w-full border-2 py-6 border-primary/10 focus:outline-none focus:border-primary text-black"
+                  className="input bg-white text-base w-full border-2 py-6 border-primary/10 focus:outline-none focus:border-primary text-black"
                   placeholder="Your budget"
                 />
               </fieldset>
@@ -150,7 +150,7 @@ const AddTask = () => {
                 <input
                   type="text"
                   name="country"
-                  className="input bg-white w-full border-2 py-6 border-primary/10 focus:outline-none focus:border-primary text-black"
+                  className="input bg-white w-full border-2 py-6 border-primary/10 focus:outline-none focus:border-primary text-black text-base"
                   placeholder="Type Your Country"
                 />
               </fieldset>

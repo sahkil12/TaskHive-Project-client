@@ -64,7 +64,7 @@ const Navbar = () => {
 
   return (
     <div className="shadow-md">
-      <div className="navbar sm:px-6 bg-base-300 py-7 rounded-b-2xl">
+      <div className="navbar sm:px-6 bg-base-200 py-7 rounded-b-2xl">
         {/* Left */}
         <div className="navbar-start">
           <div className="dropdown">
