@@ -3,7 +3,7 @@ import { FaFacebook, FaTwitter, FaLinkedin } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="rounded-t-2xl border-t-3 border-primary/20 bg-base-200 text-slate-600 py-12 px-6 shadow-inner pop">
+    <footer className="rounded-t-xl border-t-2 border-neutral-200 bg-base-200 text-slate-600 py-12 px-6 shadow-inner pop">
       <div className="lg:max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-4 gap-6 lg:gap-10">
         {/* Logo Section */}
         <div className="flex flex-col items-center md:items-start gap-4">
