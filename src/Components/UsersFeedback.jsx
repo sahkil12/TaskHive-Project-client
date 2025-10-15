@@ -5,7 +5,7 @@ const UsersFeedback = () => {
   return (
     <div className="py-16 md:py-28 bg-secondary/10 pop">
       <div className="w-10/12 mx-auto">
-        <div className="flex gap-3 items-center mb-12 mx-auto md:w-10/12">
+        <div className="flex gap-3 items-center mb-12 mx-auto lg:w-10/12 flex-wrap">
           <h4 className="bg-primary/80 w-fit rounded-full p-4">
             <MdFeedback size={32} className="text-white" />
           </h4>

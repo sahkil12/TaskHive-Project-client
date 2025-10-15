@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import { MdOutlineSubtitles } from "react-icons/md";
 import { useState } from "react";
 
@@ -14,9 +14,12 @@ const TaskDetails = () => {
 
   return (
     <div className="bg-base-300 py-10 pop">
-      <div className="mx-auto md:w-10/12 bg-white border-2 rounded-2xl border-neutral-300 shadow-lg p-8 py-10">
+      <div className="mx-auto md:w-10/12 my-6 text-primary/90 font-semibold">
+        <Link to={'/browseTasks'} className=""> Back</Link>
+      </div>
+      <div className="mx-auto md:w-10/12 bg-base-200 border-2 rounded-2xl border-neutral-300 shadow-lg p-4 sm:p-8 py-10">
         {/* Header */}
-        <h2 className="text-3xl md:text-3xl font-semibold text-gray-800 mb-6 text-center">
+        <h2 className="text-2xl md:text-3xl font-semibold  mb-6 text-center">
           {title}
         </h2>
         {/* Bid Info */}
@@ -26,36 +29,36 @@ const TaskDetails = () => {
         {/* Task Info Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-7 my-7">
           <div className="space-y-3">
-            <p>
-              <span className="font-semibold text-lg text-gray-800">Posted by:</span> {name}
+            <p className="font-semibold  md:text-lg">
+             Posted by: <span className="text-base text-gray-500">{name}</span> 
             </p>
-            <p>
-              <span className="font-semibold text-lg text-gray-800">Email:</span> {email}
+            <p className="font-semibold  md:text-lg">
+              Email: <span className="text-base text-gray-500">{email}</span> 
             </p>
-            <p>
-              <span className="font-semibold text-lg text-gray-800">Category:</span> {category}
+            <p className="font-semibold  md:text-lg">
+              Category: <span className="text-base text-gray-500">{category}</span> 
             </p>
           </div>
           <div className="space-y-2">
             <p>
-              <span className="font-semibold text-lg text-gray-800">Deadline:</span>{" "}
+              <span className="font-semibold  md:text-lg">Deadline:</span>{" "}
               <span className="text-red-600 font-semibold">{deadline}</span>
             </p>
             <p>
-              <span className="font-semibold text-lg text-gray-800">Budget:</span>{" "}
+              <span className="font-semibold  md:text-lg">Budget:</span>{" "}
               <span className="text-blue-700 font-bold">${budget}</span>
             </p>
-            <p>
-              <span className="font-semibold text-lg text-gray-800">Country:</span> {country}
+            <p className="font-semibold  md:text-lg">
+             Country: <span className="text-base text-gray-500">{country}</span> 
             </p>
           </div>
         </div>
         {/* Task Details */}
         <div className="border-t border-gray-300 pt-6">
-          <h3 className="flex items-center text-xl font-semibold mb-2 text-gray-800">
+          <h3 className="flex items-center text-xl font-semibold mb-2 ">
             <MdOutlineSubtitles className="mx-2 text-primary/80" /> Task Description
           </h3>
-          <p className="text-gray-700 leading-relaxed md:w-10/12 md:px-3">{details}</p>
+          <p className="text-gray-500 leading-relaxed md:w-10/12 md:px-3">{details}</p>
         </div>
         {/* Bid Button */}
         <div className="mt-8 text-center">

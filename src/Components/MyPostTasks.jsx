@@ -3,6 +3,7 @@ import useAuth from "../Auth/useAuth";
 import { MdOutlinePostAdd } from "react-icons/md";
 import { FaEdit, FaTrash } from "react-icons/fa";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 const MyPostTasks = () => {
   const { user } = useAuth();
@@ -50,7 +51,7 @@ const MyPostTasks = () => {
   };
   return (
     <div className="w-full py-8 p-1 pop md:w-11/12 mx-auto">
-      <h2 className="my-4 text-4xl flex items-center gap-2 justify-center font-semibold text-center">
+      <h2 className="my-4 text-3xl md:text-4xl flex items-center gap-2 justify-center font-semibold text-center">
         My Posted <span className="text-primary font-bold"> Tasks </span>{" "}
         <MdOutlinePostAdd className="text-primary" size={45}></MdOutlinePostAdd>
       </h2>
@@ -88,10 +89,10 @@ const MyPostTasks = () => {
                     >
                       <FaTrash className="text-white" />
                     </button>
-                    <button className="btn mx-1 btn-sm p-2 md:p-3 rounded-md bg-black ">
+                    <Link to={`/updateMyTask/${task._id}`} className="btn mx-1 btn-sm p-2 md:p-3 rounded-md bg-black ">
                       {" "}
                       <FaEdit className="text-white" />
-                    </button>
+                    </Link>
                     <button
                       onClick={handleCount}
                       className="btn btn-sm bg-green-400 py-4"

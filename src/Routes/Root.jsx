@@ -11,51 +11,72 @@ import PrivateRoute from "../Private/PrivateRoute";
 import ErrorPage from "../Components/ErrorPage";
 import Spinner from "../Components/Spinner";
 import TaskDetails from "../Components/TaskDetails";
+import UpdateMyTask from "./../Components/UpdateMyTask";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout></MainLayout>,
-    errorElement:<ErrorPage></ErrorPage>,
-    children:[
-        {
-            index: true,
-            element:<Home></Home>
-        },
-        {
-            path:'addTask',
-            element:<PrivateRoute><AddTask></AddTask></PrivateRoute>,
-        },
-        {
-            path:'browseTasks',
-            loader:()=>fetch('http://localhost:3000/tasks'),
-            element:<BrowseTasks></BrowseTasks>,
-            hydrateFallbackElement:<Spinner></Spinner>
-        },
-        {   
-            path:'myPostTasks',
-            element:<PrivateRoute><MyPostTasks></MyPostTasks></PrivateRoute>
-        },
-        {
-            path:'taskDetails/:id',
-            loader:({params})=>fetch(`http://localhost:3000/task/${params.id}`),
-            element:<PrivateRoute><TaskDetails></TaskDetails></PrivateRoute>,
-            hydrateFallbackElement:<Spinner></Spinner>
-        },
-    ]
+    errorElement: <ErrorPage></ErrorPage>,
+    children: [
+      {
+        index: true,
+        element: <Home></Home>,
+      },
+      {
+        path: "addTask",
+        element: (
+          <PrivateRoute>
+            <AddTask></AddTask>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "browseTasks",
+        loader: () => fetch("http://localhost:3000/tasks"),
+        element: <BrowseTasks></BrowseTasks>,
+        hydrateFallbackElement: <Spinner></Spinner>,
+      },
+      {
+        path: "myPostTasks",
+        element: (
+          <PrivateRoute>
+            <MyPostTasks></MyPostTasks>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "taskDetails/:id",
+        loader: ({ params }) =>
+          fetch(`http://localhost:3000/task/${params.id}`),
+        element: (
+          <PrivateRoute>
+            <TaskDetails></TaskDetails>
+          </PrivateRoute>
+        ),
+        hydrateFallbackElement: <Spinner></Spinner>,
+      },
+      {
+        path: "updateMyTask/:id",
+        loader: ({ params }) =>
+          fetch(`http://localhost:3000/task/${params.id}`),
+        element: <UpdateMyTask></UpdateMyTask>,
+        hydrateFallbackElement: <Spinner></Spinner>,
+      },
+    ],
   },
   {
-    path:'/auth',
-    element:<Auth></Auth>,
-    children:[
-         {
-            path:'login',
-            element:<Login></Login>
-        },
-        {
-            path:'signup',
-            element:<SignUp></SignUp>
-        }
-    ]
-  }
+    path: "/auth",
+    element: <Auth></Auth>,
+    children: [
+      {
+        path: "login",
+        element: <Login></Login>,
+      },
+      {
+        path: "signup",
+        element: <SignUp></SignUp>,
+      },
+    ],
+  },
 ]);

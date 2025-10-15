@@ -93,11 +93,11 @@ const Navbar = () => {
           </div>
 
           {/* Logo */}
-          <div className="flex items-center gap-3">
-            <img src="/taskhiva logo .png" className="w-10 h-10" alt="logo" />
+          <div className="flex items-center gap-2 sm:gap-3">
+            <img src="/taskhiva logo .png" className="w-8 h-8 sm:w-10 sm:h-10" alt="logo" />
             <Link
               to={"/"}
-              className="text-3xl font-bold bg-gradient-to-r from-indigo-600 to-sky-600 bg-clip-text text-transparent logo"
+              className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-indigo-600 to-sky-600 bg-clip-text text-transparent logo"
             >
               TaskHive
             </Link>
@@ -153,7 +153,7 @@ const Navbar = () => {
                 </div>
                 <ul
                   tabIndex={-1}
-                  className="menu menu-md dropdown-content bg-white border border-slate-200 rounded-box z-10 mt-3 flex flex-col gap-3 justify-center items-center w-80 md:w-96 shadow-lg py-10 p-5"
+                  className="menu menu-md dropdown-content bg-white border border-slate-200 rounded-box z-10 mt-3 flex flex-col gap-3 justify-center items-center w-72 md:w-96 shadow-lg py-6 sm:py-10 p-5"
                 >
                   <li className="w-full items-center">
                     <span className="pop text-lg font-semibold text-secondary">{user.displayName}</span>

@@ -1,4 +1,3 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 
@@ -11,14 +10,6 @@ const firebaseConfig = {
   messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
   appId: import.meta.env.VITE_FIREBASE_APP_ID
 };
-// const firebaseConfig = { 
-//   apiKey: "AIzaSyDGENXd1T9E-Ozxf2V7TAyUAfcxKZRJn-Q", 
-//   authDomain: "taskhive-project-client.firebaseapp.com", 
-//   projectId: "taskhive-project-client", 
-//   storageBucket: "taskhive-project-client.firebasestorage.app",
-//    messagingSenderId: "996679573529", 
-//    appId: "1:996679573529:web:729841c91b96424092ca88" };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);

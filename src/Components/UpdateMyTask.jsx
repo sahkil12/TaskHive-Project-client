@@ -1,11 +1,11 @@
-import toast from "react-hot-toast";
 import { MdOutlinePlaylistAddCircle } from "react-icons/md";
-import useAuth from "../Auth/useAuth";
+import { useLoaderData } from "react-router-dom";
+import toast from "react-hot-toast";
 import Swal from "sweetalert2";
 
-const AddTask = () => {
-  const { user } = useAuth();
-
+const UpdateMyTask = () => {
+  const task = useLoaderData();
+  console.log(task);
   const handleTaskForm = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -18,7 +18,6 @@ const AddTask = () => {
     const budget = form.budget.value;
     const country = form.country.value;
     const details = form.details.value;
-    // validation check
     if (
       !title ||
       !name ||
@@ -30,11 +29,11 @@ const AddTask = () => {
       !details
     ) {
       toast.error("All fields are required. Please fill out everything.", {
-        duration: 1500,
+        duration: 1200,
       });
       return;
     }
-    const formData = {
+    const updateFormData = {
       title,
       name,
       email,
@@ -44,22 +43,23 @@ const AddTask = () => {
       country,
       details,
     };
+    console.log(updateFormData);
     // post data in database
-    fetch("http://localhost:3000/tasks", {
-      method: "POST",
+    fetch(`http://localhost:3000/tasks/${task._id}`, {
+      method: "PUT",
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify(formData),
+      body: JSON.stringify(updateFormData),
     })
       .then((res) => res.json())
       .then((data) => {
-        // console.log(data);
-        if (data.insertedId) {
+        console.log(data);
+        if (data.modifiedCount > 0) {
           Swal.fire({
             position: "center",
             icon: "success",
-            title: "Your Task Added Successfully",
+            title: "Your Task Updated Successfully",
             showConfirmButton: false,
             timer: 1300,
           });
@@ -70,10 +70,10 @@ const AddTask = () => {
   return (
     <div className="">
       <div className="p-2 my-20 border rounded-lg bg-base-200 border-gray-200 shadow-xl md:p-8 md:w-10/12 mx-auto ">
-        <h2 className="mb-10 mt-6 rail text-center font-bold text-2xl sm:text-3xl flex justify-center items-center gap-3">
-          <MdOutlinePlaylistAddCircle size={45} className="text-secondary" />
-          <span className="text-secondary font-extrabold">Add</span> Your Task
-          Here{" "}
+        <h2 className="mb-10 mt-6 rail text-center font-bold text-2xl sm:text-3xl flex justify-center items-center gap-2 flex-wrap">
+          <MdOutlinePlaylistAddCircle size={42} className="text-secondary" />
+          <span className="text-secondary font-extrabold">Update</span> Your
+          Task Here{" "}
         </h2>
         <section>
           {/* form  */}
@@ -83,6 +83,7 @@ const AddTask = () => {
               <input
                 type="text"
                 name="title"
+                defaultValue={task.title}
                 className="input text-base w-full border-2 py-6 border-primary/10 focus:outline-none focus:border-primary "
                 placeholder="Type Your Task Title"
               />
@@ -95,6 +96,7 @@ const AddTask = () => {
                 <input
                   type="text"
                   name="name"
+                  value={task.name}
                   className="input text-base w-full border-2 py-6 border-primary/10 focus:outline-none focus:border-primary "
                   placeholder="Type Your Name"
                 />
@@ -105,7 +107,7 @@ const AddTask = () => {
                 <input
                   type="email"
                   name="email"
-                  defaultValue={user?.email || ""}
+                  value={task.email}
                   className="input text-base w-full border-2 py-6 border-primary/10 focus:outline-none focus:border-primary"
                   placeholder="Type Your Email"
                 />
@@ -116,8 +118,9 @@ const AddTask = () => {
                   Your Category
                 </label>
                 <select
-                  defaultValue="Choice Your Category"
+                  defaultValue={task.category}
                   name="category"
+                  required
                   className="select w-full border-2 text-base select-lg border-primary/10 focus:outline-none focus:border-primary"
                 >
                   <option disabled={true} className="text-gray-500">
@@ -138,6 +141,7 @@ const AddTask = () => {
                 <input
                   type="date"
                   name="deadline"
+                  defaultValue={task.deadline}
                   className="input text-base  w-full border-2 py-6 border-primary/10 focus:outline-none focus:border-primary"
                   placeholder="Enter coffee taste"
                 />
@@ -148,6 +152,7 @@ const AddTask = () => {
                 <input
                   type="number"
                   name="budget"
+                  defaultValue={task.budget}
                   className="input text-base w-full border-2 py-6 border-primary/10 focus:outline-none focus:border-primary"
                   placeholder="Your budget"
                 />
@@ -157,6 +162,7 @@ const AddTask = () => {
                 <input
                   type="text"
                   name="country"
+                  defaultValue={task.country}
                   className="input w-full border-2 py-6 border-primary/10 focus:outline-none focus:border-primary text-base"
                   placeholder="Type Your Country"
                 />
@@ -167,13 +173,14 @@ const AddTask = () => {
               <label className="label text-base font-medium ">Details</label>
               <textarea
                 name="details"
+                defaultValue={task.details}
                 className="textarea w-full border-2 text-lg border-primary/10 focus:outline-none focus:border-primary "
                 placeholder="Type Your Details"
               ></textarea>
             </fieldset>
             {/* button */}
             <button className="mt-6 rounded-full  w-full py-3 bg-primary/90 text-xl font-medium text-white">
-              Add Task
+              Update Task
             </button>
           </form>
         </section>
@@ -182,4 +189,4 @@ const AddTask = () => {
   );
 };
 
-export default AddTask;
+export default UpdateMyTask;

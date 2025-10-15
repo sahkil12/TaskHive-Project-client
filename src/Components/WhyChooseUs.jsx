@@ -40,7 +40,7 @@ const WhyChooseUs = () => {
            Why Choose <span className="text-primary"> Us</span>{" "}
           </h2>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 text-center py-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-center py-8">
           {reasons.map((r) => (
             <div
               key={r.id}
