@@ -1,6 +1,8 @@
 import Banner from "../Components/Banner";
 import FeatureTasks from "../Components/FeatureTasks";
 import HowItWork from "../Components/HowItWork";
+import UsersFeedback from "../Components/UsersFeedback";
+
 
 const Home = () => {
     return (
@@ -8,6 +10,7 @@ const Home = () => {
             <Banner></Banner>
             <FeatureTasks></FeatureTasks>
             <HowItWork></HowItWork>
+            <UsersFeedback></UsersFeedback>
         </div>
     );
 };

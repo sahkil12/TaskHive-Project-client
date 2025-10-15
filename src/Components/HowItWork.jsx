@@ -1,5 +1,6 @@
 import { MdPostAdd, MdWork } from "react-icons/md";
 import { FaRegHandshake, FaCheckCircle } from "react-icons/fa";
+import { MdOutlinePlaylistAddCheck } from "react-icons/md";
 
 const HowItWork = () => {
   const steps = [
@@ -30,11 +31,13 @@ const HowItWork = () => {
   ];
 
   return (
-    <div>
     <section className="py-28 bg-primary/20 pop">
-      <div className="max-w-6xl mx-auto px-4 text-center">
-        <h2 className="text-center text-3xl mb-12 md:text-[54px] font-bold">How it <span className="text-primary">Works</span></h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+      <div className="max-w-7xl mx-auto px-4 ">
+        <div className="flex gap-3 items-center mb-12">
+            <h4 className="bg-primary/80 w-fit rounded-full p-3"><MdOutlinePlaylistAddCheck size={42} className="text-white"/></h4>
+        <h2 className="text-3xl md:text-[54px] font-bold ">  How it <span className="text-primary"> Works</span> </h2>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 text-center">
           {steps.map((step) => (
             <div
               key={step.id}
@@ -48,7 +51,6 @@ const HowItWork = () => {
         </div>
       </div>
     </section>
-    </div>
   );
 };
 
