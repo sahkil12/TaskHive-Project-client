@@ -44,7 +44,7 @@ const AddTask = () => {
     })
     .then(res => res.json())
     .then(data => {
-      console.log(data);
+      // console.log(data);
       if(data.insertedId){
         toast.success("Your Task Added Successfully",{ duration:1200});
         form.reset();
