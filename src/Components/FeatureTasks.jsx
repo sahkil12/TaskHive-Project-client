@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
 import { MdOutlineFeaturedPlayList } from "react-icons/md";
+import { useNavigation } from "react-router-dom";
+import Spinner from "./Spinner";
 
 const FeatureTasks = () => {
+    const navigation = useNavigation()
     const [tasks,setTasks]=useState([]);
     useEffect(()=>{
         fetch('http://localhost:3000/featuredTasks')
@@ -10,7 +13,9 @@ const FeatureTasks = () => {
             setTasks(data);
         })  
     },[])
-    console.log(tasks);
+    if(navigation.state === 'loading'){
+        return <Spinner></Spinner>
+    }
     return (
         <div className="py-16 rail bg-base-200 p-5">
             <div>
@@ -21,7 +26,7 @@ const FeatureTasks = () => {
             <div className="py-6 px-2 my-8 md:w-11/12 mx-auto">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {
-                        tasks.map(task=><div key={task._id} className="border-2 flex flex-col gap-5 w-full border-neutral-300 p-6 rounded-2xl bg-base-200 hover:shadow-2xl hover:-translate-y-1 duration-300 cursor-pointer">
+                        tasks.map(task=><div key={task._id} className="border flex flex-col gap-5 w-full border-neutral-200 p-6 rounded-2xl bg-base-200 hover:shadow-2xl hover:-translate-y-1 duration-300 cursor-pointer">
                         {/* Icon */}
                         <div className="text-5xl text-primary/80 flex justify-center">
                         <MdOutlineFeaturedPlayList />

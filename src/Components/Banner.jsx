@@ -13,7 +13,7 @@ const Banner = () => {
   };
 
   return (
-    <div className="w-full h-[600px] lg:h-[700px]">
+    <div className="w-full h-[600px] lg:h-[750px]">
       <Swiper
         spaceBetween={30}
         pagination={{ clickable: true }}
@@ -30,7 +30,7 @@ const Banner = () => {
                 transition={{ duration: 0.9 }}
                 className="space-y-7 py-5"
               >
-                <motion.h2 className="text-4xl md:text-6xl/snug font-semibold ">
+                <h2 className="text-4xl md:text-6xl/snug xl:text-7xl/snug font-semibold ">
                   Find Top Freelancers for <br />
                   <span className="bg-gradient-to-r from-indigo-500 via-pink-500 to-purple-500 bg-clip-text text-transparent">
                     <Typewriter
@@ -43,7 +43,7 @@ const Banner = () => {
                       delaySpeed={1600}
                     />
                   </span>
-                </motion.h2>
+                </h2>
                 <motion.p className="text-lg">
                   Hire skilled professionals to get your projects done efficiently and on time.
                 </motion.p>
@@ -90,7 +90,7 @@ const Banner = () => {
                 transition={{ duration: 0.9 }}
                 className="space-y-7 py-5"
               >
-                <h2 className="text-4xl md:text-6xl/snug font-semibold ">
+                <h2 className="text-4xl md:text-6xl/snug xl:text-7xl/snug font-semibold ">
                   Explore Tasks That Match <br />
                   <span className="bg-gradient-to-r from-indigo-500 via-pink-500 to-purple-500 bg-clip-text text-transparent">
                     <Typewriter
@@ -140,8 +140,8 @@ const Banner = () => {
         </SwiperSlide>
 
         {/* Repeat same for slide 3 */}
-        <SwiperSlide>
-          <section className="bg-accent/10 w-full h-full pop px-5 sm:px-1">
+        <SwiperSlide> 
+          <section className="bg-accent/15 w-full h-full pop px-5 sm:px-1">
             <div className="md:w-11/12 mx-auto flex flex-col md:flex-row items-center justify-center h-full">
               <motion.div
                 variants={slideVariants}
@@ -150,7 +150,7 @@ const Banner = () => {
                 transition={{ duration: 0.9 }}
                 className="space-y-7 py-5"
               >
-                <h2 className="text-4xl md:text-6xl/snug font-semibold ">
+                <h2 className="text-4xl md:text-6xl/snug xl:text-7xl/snug font-semibold ">
                   Connect, Bid & Get <br />
                   <span className="bg-gradient-to-r from-indigo-500 via-pink-500 to-purple-500 bg-clip-text text-transparent">
                     <Typewriter
