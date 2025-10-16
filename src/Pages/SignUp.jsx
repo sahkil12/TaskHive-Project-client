@@ -21,9 +21,6 @@ const SignUp = () => {
     const photo = form.photo.value;
     const password = form.password.value;
     const term = form.term.checked;
-    const info = { name, email, photo, password };
-    console.log(info, term);
-
     setError("");
     // name validation validation--
     if (name.length < 5) {
