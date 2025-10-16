@@ -7,7 +7,7 @@ const FeatureTasks = () => {
     const navigation = useNavigation()
     const [tasks,setTasks]=useState([]);
     useEffect(()=>{
-        fetch('http://localhost:5000/featuredTasks')
+        fetch('https://task-hive-project-server-update.vercel.app/featuredTasks')
         .then(res=>res.json())
         .then(data=>{
             setTasks(data);

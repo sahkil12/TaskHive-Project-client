@@ -46,7 +46,7 @@ const UpdateMyTask = () => {
     };
     console.log(updateFormData);
     // post data in database
-    fetch(`http://localhost:5000/tasks/${task._id}`, {
+    fetch(`https://task-hive-project-server-update.vercel.app/tasks/${task._id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

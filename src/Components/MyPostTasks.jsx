@@ -14,7 +14,7 @@ const MyPostTasks = () => {
   };
   // fetch user specific data
   useEffect(() => {
-    fetch(`http://localhost:5000/myPostTasks/${user?.email}`)
+    fetch(`https://task-hive-project-server-update.vercel.app/myPostTasks/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         setMyTasks(data);
@@ -31,7 +31,7 @@ const MyPostTasks = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/myPostTasks/${id}`, {
+        fetch(`https://task-hive-project-server-update.vercel.app/myPostTasks/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
