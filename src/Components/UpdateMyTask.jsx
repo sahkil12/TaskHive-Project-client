@@ -1,7 +1,8 @@
 import { MdOutlinePlaylistAddCircle } from "react-icons/md";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import toast from "react-hot-toast";
 import Swal from "sweetalert2";
+import { FaArrowLeftLong } from "react-icons/fa6";
 
 const UpdateMyTask = () => {
   const task = useLoaderData();
@@ -45,7 +46,7 @@ const UpdateMyTask = () => {
     };
     console.log(updateFormData);
     // post data in database
-    fetch(`http://localhost:3000/tasks/${task._id}`, {
+    fetch(`http://localhost:5000/tasks/${task._id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -68,8 +69,16 @@ const UpdateMyTask = () => {
       });
   };
   return (
-    <div className="">
-      <div className="p-2 my-20 border rounded-lg bg-base-200 border-gray-200 shadow-xl md:p-8 md:w-10/12 mx-auto ">
+    <div className="my-10">
+       <div className="mx-auto rail md:w-10/12 pt-7 flex items-center justify-between">
+              <Link
+                to={"/"}
+                className="flex items-center font-bold text-primary/90 gap-3 text-lg"
+              >
+                <FaArrowLeftLong></FaArrowLeftLong> Home
+              </Link>
+            </div>
+      <div className="p-2 my-10 border rounded-lg bg-base-200 border-gray-200 shadow-xl md:p-8 md:w-10/12 mx-auto ">
         <h2 className="mb-10 mt-6 rail text-center font-bold text-2xl sm:text-3xl flex justify-center items-center gap-2 flex-wrap">
           <MdOutlinePlaylistAddCircle size={42} className="text-secondary" />
           <span className="text-secondary font-extrabold">Update</span> Your

@@ -33,7 +33,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "browseTasks",
-        loader: () => fetch("http://localhost:3000/tasks"),
+        loader: () => fetch("http://localhost:5000/tasks"),
         element: <BrowseTasks></BrowseTasks>,
         hydrateFallbackElement: <Spinner></Spinner>,
       },
@@ -48,7 +48,7 @@ export const router = createBrowserRouter([
       {
         path: "taskDetails/:id",
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/task/${params.id}`),
+          fetch(`http://localhost:5000/task/${params.id}`),
         element: (
           <PrivateRoute>
             <TaskDetails></TaskDetails>
@@ -59,7 +59,7 @@ export const router = createBrowserRouter([
       {
         path: "updateMyTask/:id",
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/task/${params.id}`),
+          fetch(`http://localhost:5000/task/${params.id}`),
         element: <UpdateMyTask></UpdateMyTask>,
         hydrateFallbackElement: <Spinner></Spinner>,
       },

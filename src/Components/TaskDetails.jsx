@@ -1,6 +1,7 @@
 import { Link, useLoaderData } from "react-router-dom";
 import { MdOutlineSubtitles } from "react-icons/md";
 import { useState } from "react";
+import { FaArrowLeftLong } from "react-icons/fa6";
 
 const TaskDetails = () => {
   const task = useLoaderData();
@@ -15,7 +16,7 @@ const TaskDetails = () => {
   return (
     <div className="bg-base-300 py-10 pop">
       <div className="mx-auto md:w-10/12 my-6 text-primary/90 font-semibold">
-        <Link to={'/browseTasks'} className=""> Back</Link>
+        <Link to={'/browseTasks'} className="flex items-center gap-3">  <FaArrowLeftLong></FaArrowLeftLong> Back</Link>
       </div>
       <div className="mx-auto md:w-10/12 bg-base-200 border-2 rounded-2xl border-neutral-300 shadow-lg p-4 sm:p-8 py-10">
         {/* Header */}

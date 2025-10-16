@@ -7,7 +7,7 @@ const FeatureTasks = () => {
     const navigation = useNavigation()
     const [tasks,setTasks]=useState([]);
     useEffect(()=>{
-        fetch('http://localhost:3000/featuredTasks')
+        fetch('http://localhost:5000/featuredTasks')
         .then(res=>res.json())
         .then(data=>{
             setTasks(data);

@@ -45,7 +45,7 @@ const AddTask = () => {
       details,
     };
     // post data in database
-    fetch("http://localhost:3000/tasks", {
+    fetch("http://localhost:5000/tasks", {
       method: "POST",
       headers: {
         "content-type": "application/json",
