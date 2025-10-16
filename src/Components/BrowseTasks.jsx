@@ -24,7 +24,7 @@ const BrowseTasks = () => {
         <title>Browse All Tasks - Task Hive</title> 
       </Helmet>
       {/* heading section */}
-      <div className="rail flex flex-col justify-center items-center text-center gap-6">
+      <div className="rail px-2 flex flex-col justify-center items-center text-center gap-6">
         <h2 className="text-4xl md:text-5xl font-bold text-center pt-10">
           Browse All <span className="text-secondary/95">Tasks</span>
         </h2>

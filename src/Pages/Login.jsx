@@ -45,11 +45,11 @@ const Login = () => {
   }
 
   return (
-    <div className="px-2 bg-primary/5 ">
+    <div className="px-2 bg-primary/5 py-5">
       <Helmet>
         <title>Login - TaskHive</title>
       </Helmet>
-      <nav className="flex flex-col items-center py-8 px-4 gap-3 md:flex-row justify-between">
+      <nav className="flex flex-col items-center py-8 px-4 gap-4 md:flex-row justify-between">
         {/* Logo */}
         <div className="flex items-center gap-3">
           <img src="/taskhiva logo .png" className="w-10 h-10" alt="logo" />
@@ -79,7 +79,7 @@ const Login = () => {
         </Link>
       </div>
       <div className="w-full mx-auto max-w-6xl my-3 border-2 border-neutral-200 p-4 rounded-md shadow sm:p-8 rail">
-        <h2 className="mb-4 text-4xl font-bold text-center">
+        <h2 className="mb-4 text-2xl md:text-4xl font-bold text-center">
           Login to TaskHive.
         </h2>
         <p className="text-md text-center font-medium text-gray-600">
@@ -111,15 +111,15 @@ const Login = () => {
             <p>LogIn with GitHub</p>
           </button>
         </div>
-        <div className="flex items-center w-full my-4">
+        <div className="flex items-center w-full my-5">
           <hr className="w-full dark:text-gray-600" />
           <p className="px-3 w-full text-gray-700 text-center">
-            Or LogIn with e-mail
+            Or LogIn with
           </p>
           <hr className="w-full dark:text-gray-600" />
         </div>
         {/* sign up form */}
-        <form onSubmit={handleFormSubmit} className="space-y-8">
+        <form onSubmit={handleFormSubmit} className="space-y-8 py-6">
           <div className="space-y-4">
             {/* email */}
             <div className="space-y-2">

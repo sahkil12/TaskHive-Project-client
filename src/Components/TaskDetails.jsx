@@ -19,7 +19,7 @@ const TaskDetails = () => {
       <Helmet>
         <title>Task Details {title}- Task Hive</title>
       </Helmet>
-      <div className="mx-auto md:w-10/12 my-6 text-primary/90 font-semibold">
+      <div className="mx-auto md:w-10/12 my-6 px-3 text-primary/90 font-semibold">
         <Link to={'/browseTasks'} className="flex items-center gap-3">  <FaArrowLeftLong></FaArrowLeftLong> Back</Link>
       </div>
       <div className="mx-auto md:w-10/12 bg-base-200 border-2 rounded-2xl border-neutral-300 shadow-lg p-4 sm:p-8 py-10">

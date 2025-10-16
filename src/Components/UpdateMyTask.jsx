@@ -68,11 +68,11 @@ const UpdateMyTask = () => {
       });
   };
   return (
-    <div className="my-10">
+    <div className="my-10 p-1">
       <Helmet>
         <title>Update Task - Task Hive</title>
       </Helmet>
-       <div className="mx-auto rail md:w-10/12 pt-7 flex items-center justify-between">
+       <div className="mx-auto px-3 rail md:w-10/12 pt-7 flex items-center justify-between">
               <Link
                 to={"/"}
                 className="flex items-center font-bold text-primary/90 gap-3 text-lg"
@@ -86,7 +86,7 @@ const UpdateMyTask = () => {
           <span className="text-secondary font-extrabold">Update</span> Your
           Task Here{" "}
         </h2>
-        <section>
+        <section className="">
           {/* form  */}
           <form onSubmit={handleTaskForm} className="pop">
             <fieldset className="flex flex-col gap-2">

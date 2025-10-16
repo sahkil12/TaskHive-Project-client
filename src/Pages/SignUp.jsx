@@ -108,11 +108,11 @@ const SignUp = () => {
     })
   }
   return (
-    <div className="px-2 bg-primary/5 ">
+    <div className="px-2 bg-primary/5 py-5">
       <Helmet>
         <title>Sign Up - Task Hive</title>
       </Helmet>
-      <nav className="flex flex-col items-center py-8 px-4 gap-3 md:flex-row justify-between">
+      <nav className="flex flex-col items-center py-8 px-4 gap-4 md:flex-row justify-between">
         {/* Logo */}
         <div className="flex items-center gap-3">
           <img src="/taskhiva logo .png" className="w-10 h-10" alt="logo" />
@@ -142,7 +142,7 @@ const SignUp = () => {
         </Link>
       </div>
       <div className="w-full mx-auto max-w-6xl my-3 border-2 border-neutral-200 p-4 rounded-md shadow sm:p-8 rail">
-        <h2 className="mb-4 text-4xl font-bold text-center">
+        <h2 className="mb-4 text-2xl md:text-4xl font-bold text-center">
           Sign Up to your account
         </h2>
         <p className="text-md text-center font-medium text-gray-600">
