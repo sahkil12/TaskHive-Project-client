@@ -7,7 +7,6 @@ import { Helmet } from "react-helmet";
 
 const UpdateMyTask = () => {
   const task = useLoaderData();
-  console.log(task);
   const handleTaskForm = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -56,7 +55,6 @@ const UpdateMyTask = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         if (data.modifiedCount > 0) {
           Swal.fire({
             position: "center",
