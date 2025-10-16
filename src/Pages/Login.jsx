@@ -4,6 +4,7 @@ import { FaArrowLeftLong } from "react-icons/fa6";
 import { Link, useLocation, useNavigate} from "react-router-dom";
 import useAuth from "../Auth/useAuth";
 import toast from "react-hot-toast";
+import { Helmet } from "react-helmet";
 
 const Login = () => {
      const { loginUser, googleCreate, githubCreate } = useAuth();
@@ -45,6 +46,9 @@ const Login = () => {
 
   return (
     <div className="px-2 bg-primary/5 ">
+      <Helmet>
+        <title>Login - TaskHive</title>
+      </Helmet>
       <nav className="flex flex-col items-center py-8 px-4 gap-3 md:flex-row justify-between">
         {/* Logo */}
         <div className="flex items-center gap-3">

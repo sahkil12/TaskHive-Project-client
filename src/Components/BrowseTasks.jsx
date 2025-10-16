@@ -1,6 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import TaskCard from "./TaskCard";
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 
 const BrowseTasks = () => {
   const allTasks = useLoaderData();
@@ -19,6 +20,9 @@ const BrowseTasks = () => {
 
   return (
     <div className="bg-base-300">
+      <Helmet>
+        <title>Browse All Tasks - Task Hive</title> 
+      </Helmet>
       {/* heading section */}
       <div className="rail flex flex-col justify-center items-center text-center gap-6">
         <h2 className="text-4xl md:text-5xl font-bold text-center pt-10">

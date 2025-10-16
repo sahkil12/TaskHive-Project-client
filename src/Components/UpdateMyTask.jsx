@@ -3,6 +3,7 @@ import { Link, useLoaderData } from "react-router-dom";
 import toast from "react-hot-toast";
 import Swal from "sweetalert2";
 import { FaArrowLeftLong } from "react-icons/fa6";
+import { Helmet } from "react-helmet";
 
 const UpdateMyTask = () => {
   const task = useLoaderData();
@@ -70,6 +71,9 @@ const UpdateMyTask = () => {
   };
   return (
     <div className="my-10">
+      <Helmet>
+        <title>Update Task - Task Hive</title>
+      </Helmet>
        <div className="mx-auto rail md:w-10/12 pt-7 flex items-center justify-between">
               <Link
                 to={"/"}

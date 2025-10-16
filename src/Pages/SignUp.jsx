@@ -6,6 +6,7 @@ import useAuth from "./../Auth/useAuth";
 import { useState } from "react";
 import Swal from "sweetalert2";
 import toast from "react-hot-toast";
+import { Helmet } from "react-helmet";
 
 const SignUp = () => {
   const { signUpUser, googleCreate, githubCreate, updateUserProfile } = useAuth();
@@ -111,6 +112,9 @@ const SignUp = () => {
   }
   return (
     <div className="px-2 bg-primary/5 ">
+      <Helmet>
+        <title>Sign Up - Task Hive</title>
+      </Helmet>
       <nav className="flex flex-col items-center py-8 px-4 gap-3 md:flex-row justify-between">
         {/* Logo */}
         <div className="flex items-center gap-3">

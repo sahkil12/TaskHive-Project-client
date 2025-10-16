@@ -4,6 +4,7 @@ import { MdOutlinePostAdd } from "react-icons/md";
 import { FaEdit, FaTrash } from "react-icons/fa";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const MyPostTasks = () => {
   const { user } = useAuth();
@@ -51,6 +52,9 @@ const MyPostTasks = () => {
   };
   return (
     <div className="w-full py-8 p-1 pop md:w-11/12 mx-auto">
+      <Helmet>
+        <title>My Posted Tasks - Task Hive</title>
+      </Helmet>
       <h2 className="my-4 text-3xl md:text-4xl flex items-center gap-2 justify-center font-semibold text-center">
         My Posted <span className="text-primary font-bold"> Tasks </span>{" "}
         <MdOutlinePostAdd className="text-primary" size={45}></MdOutlinePostAdd>

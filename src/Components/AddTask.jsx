@@ -2,6 +2,7 @@ import toast from "react-hot-toast";
 import { MdOutlinePlaylistAddCircle } from "react-icons/md";
 import useAuth from "../Auth/useAuth";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 
 const AddTask = () => {
   const { user } = useAuth();
@@ -69,6 +70,9 @@ const AddTask = () => {
   };
   return (
     <div className="">
+      <Helmet>
+        <title>Add Task - Task Hive</title>
+      </Helmet>
       <div className="p-2 my-20 border rounded-lg bg-base-200 border-gray-200 shadow-xl md:p-8 md:w-10/12 mx-auto ">
         <h2 className="mb-10 mt-6 rail text-center font-bold text-2xl sm:text-3xl flex justify-center items-center gap-3">
           <MdOutlinePlaylistAddCircle size={45} className="text-secondary" />

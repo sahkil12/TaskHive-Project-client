@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import Banner from "../Components/Banner";
 import FeatureTasks from "../Components/FeatureTasks";
 import HowItWork from "../Components/HowItWork";
@@ -7,6 +8,9 @@ import WhyChooseUs from "../Components/WhyChooseUs";
 const Home = () => {
     return (
         <div className="">
+            <Helmet>
+                <title>Task Hive - Home</title>
+            </Helmet>
             <Banner></Banner>
             <FeatureTasks></FeatureTasks>
             <HowItWork></HowItWork>
