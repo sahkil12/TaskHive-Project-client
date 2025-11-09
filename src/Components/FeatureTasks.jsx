@@ -26,7 +26,7 @@ const FeatureTasks = () => {
             <div className="py-6 px-2 my-8 md:w-11/12 mx-auto">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {
-                        tasks.map(task => <Link to={`taskDetails/${task._id}`} key={task._id} className="border-2 flex flex-col shadow-lg gap-5 w-full border-neutral-300 p-6 rounded-2xl bg-base-200 hover:shadow-2xl hover:-translate-y-2 duration-300 cursor-pointer">
+                        tasks.map(task => <Link to={`taskDetails/${task._id}`} key={task._id} className="border-2 flex flex-col shadow-lg gap-5 w-full border-neutral-200 p-6 rounded-2xl bg-base-200 hover:shadow-2xl hover:-translate-y-2 duration-300 cursor-pointer">
                             {/* Icon */}
                             <div className="text-5xl text-primary/80 flex justify-center">
                                 <MdOutlineFeaturedPlayList />
