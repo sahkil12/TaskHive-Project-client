@@ -29,7 +29,7 @@ const WhyChooseUs = () => {
     },
   ];
   return (
-    <div className="py-16 md:py-28 bg-accent/10">
+    <div className="py-16 md:py-32 bg-accent/20">
       <div className="w-10/12 mx-auto">
         <div className="flex gap-3 items-center mb-12 md:w-10/12 mx-auto">
           <h4 className="bg-primary/80 w-fit rounded-full p-4">
@@ -44,7 +44,7 @@ const WhyChooseUs = () => {
           {reasons.map((r) => (
             <div
               key={r.id}
-              className="p-6 py-8 space-y-6 bg-base-200 rounded-xl shadow hover:shadow-md transition"
+              className="p-6 py-8 space-y-6 bg-base-100 rounded-xl shadow hover:shadow-md transition"
             >
               <div className="flex justify-center">{r.icon}</div>
               <h3 className="text-2xl font-semibold mt-3">{r.title}</h3>

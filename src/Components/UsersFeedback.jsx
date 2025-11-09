@@ -17,7 +17,7 @@ const UsersFeedback = () => {
         {/* card  */}
      <div className="py-5 flex flex-col md:flex-row justify-around gap-4">
         {/* card 1 */}
-      <div className="bg-base-200 border border-gray-200 shadow-md rounded-xl px-5 py-10 max-w-4xl mx-auto flex-1 ">
+      <div className="bg-base-200 border border-gray-200 shadow-md rounded-xl px-5 py-10 max-w-3xl mx-auto flex-1 ">
       {/* Quote Icon */}
       <FaQuoteLeft className="text-3xl text-gray-400 mb-4" />
       {/* Review Text */}
@@ -40,7 +40,7 @@ const UsersFeedback = () => {
       </div>
     </div>
         {/* card 2 */}
-      <div className="bg-base-200 border border-gray-200 shadow-md rounded-xl px-5 py-10 max-w-4xl mx-auto flex-1">
+      <div className="bg-base-200 border border-gray-200 shadow-md rounded-xl px-5 py-10 max-w-3xl mx-auto flex-1">
       {/* Quote Icon */}
       <FaQuoteLeft className="text-3xl text-gray-400 mb-4" />
       {/* Review Text */}

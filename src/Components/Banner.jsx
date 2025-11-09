@@ -1,7 +1,7 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
-import { Pagination } from "swiper/modules";
+import { Autoplay, Pagination } from "swiper/modules";
 import { Link } from "react-router-dom";
 import { Typewriter } from "react-simple-typewriter";
 import { motion } from "framer-motion";
@@ -17,7 +17,12 @@ const Banner = () => {
       <Swiper
         spaceBetween={30}
         pagination={{ clickable: true }}
-        modules={[Pagination]}
+        modules={[Pagination, Autoplay]}
+        loop={true}
+        autoplay={{
+          delay: 6000,
+          disableOnInteraction: false
+        }}
         className="w-full h-full"
       >
         <SwiperSlide>
@@ -140,7 +145,7 @@ const Banner = () => {
         </SwiperSlide>
 
         {/* Repeat same for slide 3 */}
-        <SwiperSlide> 
+        <SwiperSlide>
           <section className="bg-accent/15 w-full h-full pop px-5 sm:px-1">
             <div className="md:w-11/12 mx-auto flex flex-col md:flex-row items-center justify-center h-full">
               <motion.div
