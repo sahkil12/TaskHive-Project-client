@@ -36,3 +36,26 @@ Developed by [Tazwer-Shakil]
 
 👨‍💻 Author: Tazwer Shakil
 📧 Email: tazwershakilshakil@gmail.com
+
+## 📸 Screenshots
+
+### TaskHive Homepage Hero Section
+![Homepage Screenshot](./public/TaskHive%20home%20.png)
+
+### TaskHive ( Dark Mode ) Homepage Hero Section
+![Homepage Screenshot](./public/Dark%20home%20page%20.png)
+
+### TaskHive Featured Tasks
+![Homepage Screenshot](./public/Featured%20card%20.png)
+
+### TaskHive Add task Page
+![Homepage Screenshot](./public/Add%20Task%20page.png)
+
+### TaskHive Browse Tasks Page
+![Homepage Screenshot](./public/Browse%20task%20page%20.png)
+
+### TaskHive My Posted Task Page
+![Homepage Screenshot](./public/my%20posted%20task.png)
+
+### TaskHive Task Details Page ( Dark Mode )
+![Homepage Screenshot](./public/Task%20details%20page.png)
