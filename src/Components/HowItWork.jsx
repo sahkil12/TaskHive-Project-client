@@ -32,7 +32,7 @@ const HowItWork = () => {
 
   return (
     <section className="py-28 bg-primary/20 pop">
-      <div className="max-w-7xl mx-auto p-4 md:px-0">
+      <div className="max-w-7xl mx-auto p-5 md:px-0">
         <div className="flex gap-3 items-center mb-12">
             <h4 className="bg-primary/80 w-fit rounded-full p-3"><MdOutlinePlaylistAddCheck size={42} className="text-white"/></h4>
         <h2 className="text-3xl md:text-[54px] font-bold ">  How it <span className="text-primary"> Works</span> </h2>
