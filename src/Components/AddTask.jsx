@@ -73,7 +73,7 @@ const AddTask = () => {
       <Helmet>
         <title>Add Task - Task Hive</title>
       </Helmet>
-      <div className="p-2 py-5 my-20 border rounded-lg bg-base-200 border-gray-200 shadow-xl md:p-8 md:w-10/12 mx-auto ">
+      <div className="p-4 py-5 my-10 border rounded-xl bg-base-200 border-gray-200 shadow-md md:p-8 md:w-10/12 mx-auto ">
         <h2 className="mb-10 mt-6 rail text-center font-bold text-2xl sm:text-3xl flex justify-center items-center gap-3">
           <MdOutlinePlaylistAddCircle size={45} className="text-secondary" />
           <span className="text-secondary font-extrabold">Add</span> Your Task

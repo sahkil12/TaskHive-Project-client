@@ -56,8 +56,8 @@ const MyPostTasks = () => {
         <title>My Posted Tasks - Task Hive</title>
       </Helmet>
       <h2 className="my-4 text-3xl md:text-4xl flex items-center gap-2 justify-center font-semibold text-center">
-        My Posted <span className="text-primary font-bold"> Tasks </span>{" "}
-        <MdOutlinePostAdd className="text-primary" size={45}></MdOutlinePostAdd>
+        My Posted <span className="text-secondary/95 font-bold"> Tasks </span>{" "}
+        <MdOutlinePostAdd className="text-secondary/95" size={45}></MdOutlinePostAdd>
       </h2>
       {/* table */}
       <div>

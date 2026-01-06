@@ -29,7 +29,7 @@ const WhyChooseUs = () => {
     },
   ];
   return (
-    <div className="py-16 md:py-32 bg-accent/20">
+    <div className="py-16 md:py-32 bg-accent/15">
       <div className="w-10/12 mx-auto">
         <div className="flex gap-3 items-center mb-12 md:w-10/12 mx-auto">
           <h4 className="bg-primary/80 w-fit rounded-full p-4">
