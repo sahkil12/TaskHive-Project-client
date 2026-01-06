@@ -35,13 +35,8 @@ const bannerSliders = [
 ]
 
 const Banner = () => {
-  // const slideVariants = {
-  //   hidden: { opacity: 0, y: 60 },
-  //   show: { opacity: 1, y: 0 },
-  // };
-
   return (
-    <div className="w-full h-[650px] lg:h-[860px] pop">
+    <div className="w-full h-[650px] lg:h-[calc(100vh-90px)] pop">
       <Swiper
         spaceBetween={30}
         pagination={{ clickable: true }}

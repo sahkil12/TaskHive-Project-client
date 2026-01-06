@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import { Typewriter } from 'react-simple-typewriter';
 
 const BannerSlide = ({ slide }) => {
-     console.log(slide);
      const slideVariants = {
           hidden: { opacity: 0, y: 60 },
           show: { opacity: 1, y: 0 },
@@ -19,7 +18,7 @@ const BannerSlide = ({ slide }) => {
                          transition={{ duration: 0.9 }}
                          className="space-y-7 py-5"
                     >
-                         <h2 className="text-4xl md:text-6xl/snug xl:text-7xl/snug font-semibold ">
+                         <h2 className="text-5xl/tight md:text-6xl/snug xl:text-7xl/snug  font-semibold ">
                               {slide.title} <br />
                               <span className="bg-gradient-to-r from-indigo-500 via-pink-500 to-purple-500 bg-clip-text text-transparent">
                                    <Typewriter
