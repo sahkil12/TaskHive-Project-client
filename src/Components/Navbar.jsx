@@ -54,17 +54,16 @@ const Navbar = () => {
       </li>
     </>
   );
-
   //
   const { user, logOutUser } = useAuth();
-
-  const handleLogout =()=>{
+  // logout function
+  const handleLogout = () => {
     logOutUser()
   }
 
   return (
-    <div className="shadow-md">
-      <div className="navbar sm:px-6 bg-base-200 py-7 rounded-b-2xl">
+    <div className="shadow-sm">
+      <div className="navbar sm:px-6 bg-base-200 py-6 rounded-b-2xl">
         {/* Left */}
         <div className="navbar-start">
           <div className="dropdown">
@@ -91,7 +90,6 @@ const Navbar = () => {
               {links}
             </ul>
           </div>
-
           {/* Logo */}
           <div className="flex items-center gap-1 sm:gap-3">
             <img src="/taskhiva logo .png" className="w-7 h-7 sm:w-10 sm:h-10" alt="logo" />
@@ -103,19 +101,16 @@ const Navbar = () => {
             </Link>
           </div>
         </div>
-
         {/* Center Links */}
         <div className="navbar-center hidden lg:flex">
           <ul className="flex items-center gap-8 text-lg">{links}</ul>
         </div>
-
         {/* Right */}
-        <div className="navbar-end gap-4">
+        <div className="navbar-end gap-5">
           {/* theme */}
           <label className="swap swap-rotate">
             {/* this hidden checkbox controls the state */}
             <input type="checkbox" className="theme-controller" value="dark" />
-
             {/* sun icon */}
             <svg
               className="swap-off h-7 w-7 sm:h-10 sm:w-10 fill-current text-black/80"
@@ -133,26 +128,26 @@ const Navbar = () => {
               <path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" />
             </svg>
           </label>
-
+          {/* profile */}
           <div>
             {user ? (
               <div className="dropdown  dropdown-end">
                 <div
                   tabIndex={0}
                   role="button"
-                  className="btn btn-ghost btn-circle avatar"
+                  className="btn btn-lg btn-ghost btn-circle avatar"
                 >
-                  <div className="w-14 rounded-full ring ring-primary/40 ring-offset-2">
+                  <div className="w-14 rounded-full ring-2 ring-primary/60 ring-offset-2">
                     <img
-                    className="rounded-full w-10 h-10"
+                      className="rounded-full w-12 h-12"
                       alt="User"
-                      src={user?.photoURL || '/user.png' }
+                      src={user?.photoURL || '/user.png'}
                     />
                   </div>
                 </div>
                 <ul
                   tabIndex={-1}
-                  className="menu menu-md dropdown-content bg-white border border-slate-200 rounded-box z-10 mt-3 flex flex-col gap-3 justify-center items-center w-72 md:w-96 shadow-lg py-6 sm:py-10 p-5"
+                  className="menu menu-md dropdown-content bg-white border border-slate-200 rounded-box z-10 mt-3 flex flex-col gap-3 justify-center items-center w-72 md:w-80 shadow-lg py-6 sm:py-8 p-4"
                 >
                   <li className="w-full items-center">
                     <span className="pop text-lg font-semibold text-secondary">{user.displayName}</span>
@@ -173,7 +168,6 @@ const Navbar = () => {
               </Link>
             )}
           </div>
-
           {/* Profile */}
         </div>
       </div>
