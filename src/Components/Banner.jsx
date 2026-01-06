@@ -2,18 +2,46 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Autoplay, Pagination } from "swiper/modules";
-import { Link } from "react-router-dom";
-import { Typewriter } from "react-simple-typewriter";
-import { motion } from "framer-motion";
+// import { Link } from "react-router-dom";
+// import { Typewriter } from "react-simple-typewriter";
+// import { motion } from "framer-motion";
+import BannerSlide from "./BannerSlide";
+
+const bannerSliders = [
+  {
+    bg: "bg-primary/30",
+    title: "Find Top Freelancers for",
+    words: ["Any Task", "Any Problem", "Any Project"],
+    description:
+      "Hire skilled professionals to get your projects done efficiently and on time.",
+    primaryGradient: "from-primary/80 via-purple-600 to-secondary/80",
+  },
+  {
+    bg: "bg-secondary/10",
+    title: "Explore Tasks That Match",
+    words: ["Your Skills", "Your Passion", "Your Expertise"],
+    description:
+      "Discover exciting projects and bid to get hired by clients worldwide.",
+    primaryGradient: "from-secondary/80 via-purple-600 to-secondary/80",
+  },
+  {
+    bg: "bg-accent/15",
+    title: "Connect, Bid & Get",
+    words: ["Get Hired", "Grow Fast", "Win Projects"],
+    description:
+      "Submit bids, communicate with clients, and grow your freelance career.",
+    primaryGradient: "from-primary/80 via-purple-600 to-secondary/80",
+  },
+]
 
 const Banner = () => {
-  const slideVariants = {
-    hidden: { opacity: 0, y: 60 },
-    show: { opacity: 1, y: 0 },
-  };
+  // const slideVariants = {
+  //   hidden: { opacity: 0, y: 60 },
+  //   show: { opacity: 1, y: 0 },
+  // };
 
   return (
-    <div className="w-full h-[600px] lg:h-[750px]">
+    <div className="w-full h-[650px] lg:h-[860px] pop">
       <Swiper
         spaceBetween={30}
         pagination={{ clickable: true }}
@@ -25,7 +53,16 @@ const Banner = () => {
         }}
         className="w-full h-full"
       >
-        <SwiperSlide>
+        {
+          bannerSliders?.map((slide, index) => (
+            <SwiperSlide key={index}>
+              <BannerSlide slide={slide}>
+              </BannerSlide>
+            </SwiperSlide>
+          ))
+        }
+
+        {/* <SwiperSlide>
           <section className="bg-primary/30 w-full h-full pop px-5 sm:px-1">
             <div className="md:w-11/12 mx-auto flex flex-col md:flex-row items-center justify-center h-full">
               <motion.div
@@ -82,10 +119,10 @@ const Banner = () => {
               </motion.div>
             </div>
           </section>
-        </SwiperSlide>
+        </SwiperSlide> */}
 
         {/* Repeat same for slide 2 */}
-        <SwiperSlide>
+        {/* <SwiperSlide>
           <section className="bg-secondary/10 w-full h-full pop px-5 sm:px-1">
             <div className="md:w-11/12 mx-auto flex flex-col md:flex-row items-center justify-center h-full">
               <motion.div
@@ -142,10 +179,10 @@ const Banner = () => {
               </motion.div>
             </div>
           </section>
-        </SwiperSlide>
+        </SwiperSlide> */}
 
         {/* Repeat same for slide 3 */}
-        <SwiperSlide>
+        {/* <SwiperSlide>
           <section className="bg-accent/15 w-full h-full pop px-5 sm:px-1">
             <div className="md:w-11/12 mx-auto flex flex-col md:flex-row items-center justify-center h-full">
               <motion.div
@@ -202,7 +239,7 @@ const Banner = () => {
               </motion.div>
             </div>
           </section>
-        </SwiperSlide>
+        </SwiperSlide> */}
       </Swiper>
     </div>
   );
