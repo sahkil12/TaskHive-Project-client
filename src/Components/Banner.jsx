@@ -11,7 +11,7 @@ const bannerSliders = [
     words: ["Any Task", "Any Problem", "Any Project"],
     description:
       "Hire skilled professionals to get your projects done efficiently and on time.",
-    primaryGradient: "from-primary/80 via-purple-600 to-secondary/80",
+    
   },
   {
     bg: "bg-secondary/10",
@@ -19,7 +19,6 @@ const bannerSliders = [
     words: ["Your Skills", "Your Passion", "Your Expertise"],
     description:
       "Discover exciting projects and bid to get hired by clients worldwide.",
-    primaryGradient: "from-secondary/80 via-purple-600 to-secondary/80",
   },
   {
     bg: "bg-accent/15",
@@ -27,7 +26,6 @@ const bannerSliders = [
     words: ["Get Hired", "Grow Fast", "Win Projects"],
     description:
       "Submit bids, communicate with clients, and grow your freelance career.",
-    primaryGradient: "from-primary/80 via-purple-600 to-secondary/80",
   },
 ]
 
@@ -54,7 +52,6 @@ const Banner = () => {
             </SwiperSlide>
           ))
         }
-
       </Swiper>
     </div>
   );

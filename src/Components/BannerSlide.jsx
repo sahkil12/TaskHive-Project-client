@@ -6,13 +6,13 @@ const BannerSlide = ({ slide }) => {
      const containerVariants = {
           hidden: {
                opacity: 0,
-               y: 80,
+               y: 70,
           },
           show: {
                opacity: 1,
                y: 0,
                transition: {
-                    duration: 0.9,
+                    duration: 0.7,
                     ease: "easeOut",
                },
           },
@@ -30,7 +30,7 @@ const BannerSlide = ({ slide }) => {
                     >
                          <h2 className="text-5xl/tight md:text-6xl/snug xl:text-7xl/snug  font-semibold ">
                               {slide.title} <br />
-                              <span className="bg-gradient-to-r from-indigo-500 via-pink-500 to-purple-500 bg-clip-text text-transparent">
+                              <span className="bg-gradient-to-r from-indigo-600/70 via-pink-500 to-purple-500 bg-clip-text text-transparent">
                                    <Typewriter
                                         words={slide.words}
                                         loop
@@ -42,10 +42,10 @@ const BannerSlide = ({ slide }) => {
                                    />
                               </span>
                          </h2>
-
+                         {/* description */}
                          <p className="text-lg ">{slide.description}</p>
-
-                         <motion.div
+                         {/* button */}
+                         <div
                               className="flex gap-4 flex-wrap"
                          >
                               <ActionButton to="/browseTasks" >
@@ -54,7 +54,7 @@ const BannerSlide = ({ slide }) => {
                               <ActionButton to="/addTask" >
                                    Add Tasks
                               </ActionButton>
-                         </motion.div>
+                         </div>
                     </motion.div>
                </div>
           </section>
