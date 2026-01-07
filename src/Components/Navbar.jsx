@@ -62,7 +62,7 @@ const Navbar = () => {
   }
 
   return (
-    <div className="shadow-sm">
+    <div className="">
       <div className="navbar sm:px-6 bg-base-200 py-6 rounded-b-2xl">
         {/* Left */}
         <div className="navbar-start">
