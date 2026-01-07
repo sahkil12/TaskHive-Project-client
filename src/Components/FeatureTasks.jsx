@@ -17,7 +17,7 @@ const FeatureTasks = () => {
         return <Spinner></Spinner>
     }
     return (
-        <div className="py-16 rail bg-base-100 p-5">
+        <div className="py-10 rail bg-base-100 p-5">
             <div>
                 <h2 className="text-center text-3xl py-6 md:text-[54px] font-bold">Featured <span className="text-primary font-extrabold">Opportunities</span></h2>
                 <p className="text-center font-semibold md:text-lg">Find the right tasks, post your ideas, and grow with the community.</p>
