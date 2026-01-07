@@ -40,7 +40,7 @@ Developed by [Tazwer-Shakil]
 ## 📸 Screenshots
 
 ### TaskHive Homepage Hero Section
-![Homepage Screenshot](./public/TaskHive%20home%20.png)
+![Homepage Screenshot](./public/taskhive-home.png)
 
 ### TaskHive ( Dark Mode ) Homepage Hero Section
 ![Homepage Screenshot](./public/Dark%20home%20page%20.png)
