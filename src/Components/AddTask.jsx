@@ -73,8 +73,8 @@ const AddTask = () => {
         <title>Add Task - Task Hive</title>
       </Helmet>
       <div className="p-4 py-5 my-10 border rounded-xl bg-base-200 border-gray-200 shadow-md md:p-8 md:w-10/12 mx-auto ">
-        <h2 className="mb-10 mt-6 rail text-center font-bold text-2xl sm:text-3xl flex justify-center items-center gap-3">
-          <MdOutlinePlaylistAddCircle size={45} className="text-secondary" />
+        <h2 className="mb-10 mt-6 rail text-center font-bold text-xl sm:text-3xl flex justify-center items-center gap-2">
+          <MdOutlinePlaylistAddCircle size={40} className="text-secondary" />
           <span className="text-secondary font-extrabold">Add</span> Your Task
           Here{" "}
         </h2>
@@ -86,7 +86,7 @@ const AddTask = () => {
               <input
                 type="text"
                 name="title"
-                className="input text-base w-full border-2 py-6 border-primary/10 focus:outline-none focus:border-primary "
+                className="input text-sm md:text-base w-full border-2 py-6 border-primary/10 focus:outline-none focus:border-primary "
                 placeholder="Type Your Task Title"
               />
             </fieldset>
@@ -98,7 +98,7 @@ const AddTask = () => {
                 <input
                   type="text"
                   name="name"
-                  className="input text-base w-full border-2 py-6 border-primary/10 focus:outline-none focus:border-primary "
+                  className="input text-sm md:text-base w-full border-2 py-6 border-primary/10 focus:outline-none focus:border-primary "
                   placeholder="Type Your Name"
                 />
               </fieldset>
@@ -109,7 +109,7 @@ const AddTask = () => {
                   type="email"
                   name="email"
                   defaultValue={user?.email || ""}
-                  className="input text-base w-full border-2 py-6 border-primary/10 focus:outline-none focus:border-primary"
+                  className="input text-sm md:text-base w-full border-2 py-6 border-primary/10 focus:outline-none focus:border-primary"
                   placeholder="Type Your Email"
                 />
               </fieldset>
@@ -121,7 +121,7 @@ const AddTask = () => {
                 <select
                   defaultValue="Choice Your Category"
                   name="category"
-                  className="select w-full border-2 text-base select-lg border-primary/10 focus:outline-none focus:border-primary"
+                  className="select w-full border-2 text-sm md:text-base select-lg border-primary/10 focus:outline-none focus:border-primary"
                 >
                   <option disabled={true} className="text-gray-500">
                     Choice Your Category
@@ -141,8 +141,7 @@ const AddTask = () => {
                 <input
                   type="date"
                   name="deadline"
-                  className="input text-base  w-full border-2 py-6 border-primary/10 focus:outline-none focus:border-primary"
-                  placeholder="Enter coffee taste"
+                  className="input text-sm md:text-base  w-full border-2 py-6 border-primary/10 focus:outline-none focus:border-primary"
                 />
               </fieldset>
               {/* budget */}
@@ -151,7 +150,7 @@ const AddTask = () => {
                 <input
                   type="number"
                   name="budget"
-                  className="input text-base w-full border-2 py-6 border-primary/10 focus:outline-none focus:border-primary"
+                  className="input text-sm md:text-base w-full border-2 py-6 border-primary/10 focus:outline-none focus:border-primary"
                   placeholder="Your budget"
                 />
               </fieldset>
@@ -160,7 +159,7 @@ const AddTask = () => {
                 <input
                   type="text"
                   name="country"
-                  className="input w-full border-2 py-6 border-primary/10 focus:outline-none focus:border-primary text-base"
+                  className="input w-full border-2 py-6 border-primary/10 focus:outline-none focus:border-primary text-sm md:text-base"
                   placeholder="Type Your Country"
                 />
               </fieldset>
@@ -175,7 +174,7 @@ const AddTask = () => {
               ></textarea>
             </fieldset>
             {/* button */}
-            <button className="mt-6 rounded-full  w-full py-3 bg-primary/90 text-xl font-medium text-white">
+            <button className="mt-6 rounded-full w-full py-3 bg-primary/90 text-base md:text-lg font-medium text-white">
               Add Task
             </button>
           </form>

@@ -25,7 +25,7 @@ const BrowseTasks = () => {
       </Helmet>
       {/* heading section */}
       <div className="rail px-2 flex flex-col justify-center items-center text-center gap-6">
-        <h2 className="text-4xl md:text-5xl font-bold text-center pt-10">
+        <h2 className="text-3xl md:text-5xl font-bold text-center pt-10">
           Browse All <span className="text-secondary/95">Tasks</span>
         </h2>
         <p className="text-base/normal tracking-tight md:tracking-wide font-semibold opacity-95 md:text-lg">

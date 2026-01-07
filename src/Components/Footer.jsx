@@ -3,7 +3,7 @@ import { FaFacebook, FaTwitter, FaLinkedin } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="rounded-t-xl border-t-2 border-neutral-200 bg-base-200 text-slate-600 py-12 px-6 shadow-inner pop">
+    <footer className="border-t-2 border-neutral-100 bg-base-200 text-slate-600 py-12 px-6 pop">
       <div className="lg:max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-4 gap-6 lg:gap-10">
         {/* Logo Section */}
         <div className="flex flex-col items-center md:items-start gap-4">
@@ -24,19 +24,18 @@ const Footer = () => {
             Your freelance task marketplace – connect, collaborate, and grow.
           </p>
           {/* Social Icons */}
-          <div className="flex gap-4 mt-3">
+          <div className="flex gap-4 mt-2">
             <a href="#" className="text-slate-500 hover:text-primary transition">
-              <FaFacebook size={20} />
+              <FaFacebook size={23} />
             </a>
             <a href="#" className="text-slate-500 hover:text-primary transition">
-              <FaTwitter size={20} />
+              <FaTwitter size={23} />
             </a>
             <a href="#" className="text-slate-500 hover:text-primary transition">
-              <FaLinkedin size={20} />
+              <FaLinkedin size={23} />
             </a>
           </div>
         </div>
-
         {/* Pages */}
         <nav className="flex flex-col gap-2">
           <h6 className="font-semibold text-gray-600 mb-2">Pages</h6>
@@ -45,7 +44,6 @@ const Footer = () => {
           <Link to="/browseTasks" className="hover:text-primary transition">Browse Jobs</Link>
           <Link to="/myPostTasks" className="hover:text-primary transition">My Posted Task</Link>
         </nav>
-
         {/* Legal */}
         <nav className="flex flex-col gap-2">
           <h6 className="font-semibold text-gray-600 mb-2">Legal</h6>
@@ -53,7 +51,6 @@ const Footer = () => {
           <a className="hover:text-primary transition">Privacy policy</a>
           <a className="hover:text-primary transition">Cookie policy</a>
         </nav>
-
         {/* Newsletter */}
         <form className="flex flex-col gap-3">
           <h6 className="font-semibold text-gray-600 mb-2">Newsletter</h6>
@@ -72,9 +69,8 @@ const Footer = () => {
           </div>
         </form>
       </div>
-
       {/* Bottom Note */}
-      <div className="mt-7 border-t pt-6 text-center text-base text-slate-700">
+      <div className="max-w-7xl mx-auto mt-7 border-t border-gray-400/70 pt-6 text-center text-base text-slate-700">
         © {new Date().getFullYear()} TaskHive. All rights reserved.
       </div>
     </footer>
